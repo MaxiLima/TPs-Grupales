@@ -1,0 +1,2 @@
+Todo
+	Error : Hace mal el ordenamiento de las historias clinicas.

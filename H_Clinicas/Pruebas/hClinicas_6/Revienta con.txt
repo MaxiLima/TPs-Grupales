@@ -1,9 +1,11 @@
-01_Faltan Blancos	
+01_Faltan Blancos
 	Error:
 02_Cantidad Incorrecta
 	Error:
 03_Misma Historia
 	Error: No deberia listar pacientes con la misma historia clinica
+04_Lee Bien Archivo
+	Error: Produce un error de ejecución.
 05_Negativos
 	Error: No deberia listar pacientes con historias clinicas negativas
 06_Tipo Variable

@@ -1,0 +1,10 @@
+01_Faltan Blancos
+	Error : 
+02_Cantidad Incorrecta
+	Error:
+03_Misma Historia
+	Error: No deberia listar dos pacientes con la misma historia clinica
+05_Negativos
+	Error: No deberia listar pacientes si la historia clinica es un entero negativo.
+06_Tipo Variable
+	Error: No funciona para historias clinicas con un entero double

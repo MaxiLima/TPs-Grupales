@@ -1,1 +1,1 @@
--Historias clinicas repetidas 
+Erro de ejecución. Falla con todos los lotes de prueba
