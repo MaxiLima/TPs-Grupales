@@ -9,4 +9,6 @@
 05_Negativos
 	Error: No deberia listar pacientes con historias clinicas negativas
 06_Tipo Variable
-	Error: No funciona para historias clinicas de entero double
+	Error: No funciona para historias clinicas de entero long
+07_Caso Fatiga
+	Error: El programa deja de funcionar.
