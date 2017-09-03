@@ -1,9 +1,10 @@
 package namegenerator;
 
-import java.util.Random;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Random;
+import java.util.TreeSet;
 
 public class Generator {
 	
@@ -14,17 +15,36 @@ public class Generator {
 		"Carla", "Julieta", "Juan", "Carlos", "Esteban", "Alan", "Paula", "Monica",
 		"Sebastian", "Lara", "Lionel", "Silvia", "Gustavo"};
 	
+
 	public static void main(String[] args) throws IOException {
 		
 		PrintWriter salida = new PrintWriter(new FileWriter("h_clinicas.in"));
 		Random rand = new Random();
 		Generator gen = new Generator();
+		long total = 0;
 		
-		salida.println(40000);
+		TreeSet<Integer> arbol = new TreeSet<Integer>();
 		
-		for (int i = 0; i < 40000; i++) {
+		for (int i = 0; i < 50000; i++) {
 			
-			salida.print(rand.nextInt(500000-1)+1);
+			if(arbol.add(rand.nextInt(500000-1)+1))
+				total++;
+		}
+		
+		salida.println(total);
+		
+		for (int i = 0; i < total; i++) {
+			
+			if(i%2 == 0){
+				salida.print(arbol.first());
+				arbol.remove(arbol.first());
+			}
+			else{
+				salida.print(arbol.last());
+				arbol.remove(arbol.last());
+			}
+			
+			
 			salida.print(" "+gen.getApellidos()+" ");
 			salida.println(gen.getNombres());
 		}
@@ -43,6 +63,6 @@ public class Generator {
 		return nombres[rnd];
 	}
 	
-	
+
 
 }
