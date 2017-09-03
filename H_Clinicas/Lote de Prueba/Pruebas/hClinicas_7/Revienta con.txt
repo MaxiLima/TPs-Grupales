@@ -1,2 +1,1 @@
-Todo
-	Error : Falla en la lectura del archivo. Genera errores con todos los lotes de prueba
+Tiene un serio problema con la lectura y escritura del archivo

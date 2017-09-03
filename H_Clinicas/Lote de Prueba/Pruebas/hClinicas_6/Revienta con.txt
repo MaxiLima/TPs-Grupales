@@ -1,14 +1,1 @@
-01_Faltan Blancos
-	Error:
-02_Cantidad Incorrecta
-	Error:
-03_Misma Historia
-	Error: No deberia listar pacientes con la misma historia clinica
-04_Lee Bien Archivo
-	Error: Produce un error de ejecución.
-05_Negativos
-	Error: No deberia listar pacientes con historias clinicas negativas
-06_Tipo Variable
-	Error: No funciona para historias clinicas de entero long
-07_Caso Fatiga
-	Error: El programa deja de funcionar.
+No funciona cuando el HC minimo esta en la ultima posicion del archivo

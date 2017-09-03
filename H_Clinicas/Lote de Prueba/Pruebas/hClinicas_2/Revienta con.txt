@@ -1,2 +1,1 @@
-Todo
-	Error : Hace mal el ordenamiento de las historias clinicas.
+Falla con archivos in muy grandes. no ordena los hc apropiadamente en todos los casos

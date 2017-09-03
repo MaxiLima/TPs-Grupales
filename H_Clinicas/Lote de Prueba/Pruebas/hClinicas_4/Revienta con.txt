@@ -1,8 +1,1 @@
-01_Faltan Blancos	
-	Error:
-02_Cantidad Incorrecta
-	Error:
-03_Misma Historia
-	Error: No deberia listar pacientes con la misma historia clinica
-05_Negativos
-	Error: No deberia listar pacientes con historias clinicas negativas
+todo bien salvo que no tiene long int, y no unsigned long int

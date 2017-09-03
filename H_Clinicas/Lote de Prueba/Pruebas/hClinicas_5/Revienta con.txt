@@ -1,2 +1,3 @@
-Todo
-	Error: Error de ejecución del programa
+El programa tiene un error de ejecucion cuando el archivo in tiene mas de un registro
+con un registro ejecuta normalmente, ya con dos o mas deja de funcionar. 
+probablemente sea un error en la escritura
