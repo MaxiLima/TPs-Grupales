@@ -1,1 +1,0 @@
-todo bien salvo que no tiene long int, y no unsigned long int

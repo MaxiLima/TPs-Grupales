@@ -1,1 +1,0 @@
-No funciona cuando el HC minimo esta en la ultima posicion del archivo

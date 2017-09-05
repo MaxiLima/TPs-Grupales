@@ -1,7 +1,0 @@
-Mantiene el primer registro en la primer posicion y ordena los siguientes.
-Pareceria que hay una linea de codigo fuera del ciclo de escritura del archivo
-Ej:
-salida.add();
-for(){
-	...
-}

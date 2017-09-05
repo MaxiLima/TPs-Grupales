@@ -1,7 +1,0 @@
-00-bien 
-01-bien
-03-bien
-04-bien
-05-no soporta long
-06-
-07-

@@ -1,4 +1,0 @@
-Todos los casos
-	Error : Parecería que el programa usa dos vectores para hacer el ordenamiento,
-		y tiene problemas con el indice del vector de nombres, ya que hace
-		repeticiones (en su mayoria del nombre con historia clinica mas chica).
