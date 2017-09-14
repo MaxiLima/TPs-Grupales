@@ -14,28 +14,28 @@ public class PolinomioTest {
 	
 	@Before
 	public void setUp() {
-		polinomio = new Polinomio(4);	
+		double[] coeficientes = {-1,-2,5,14,-9,-6,21,-4,10,7,-200,-828};
+		polinomio = new Polinomio(11, coeficientes);	
 	}
 	
 	@Test
     public void queInicieEnUnoSegunElGrado() {
 		
 		int i = 0;
-		while(polinomio.getCoeficientes()[i] != 1 && i <= polinomio.getGrado())
+		Polinomio poli = new Polinomio(6);
+		while(poli.getCoeficientes()[i] != 1 && i <= poli.getGrado())
 		  i ++;
 		
-		Assert.assertTrue(i>=polinomio.getGrado());
+		Assert.assertTrue(i>=poli.getGrado());
 		
 	}
 
 	@Test
 	public void evaluarMSucesivaTest() {
-		double[] coeficientes = {2,2,4};
-		Polinomio polinomio1 = new Polinomio(2,coeficientes);
-		
+
 		long start = System.currentTimeMillis();
 		
-		Assert.assertTrue(polinomio1.evaluarMSucesivas(2) == 16);
+		Assert.assertTrue(polinomio.evaluarMSucesivas(2) == 0);
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
@@ -44,12 +44,10 @@ public class PolinomioTest {
 	
 	@Test
 	public void evaluarRecursivaTest() {
-		double[] coeficientes = {2,2,4};
-		Polinomio polinomio1 = new Polinomio(2,coeficientes);
 		
 		long start = System.currentTimeMillis();
 		
-		Assert.assertTrue(polinomio1.evaluarRecursiva(2) == 16);
+		Assert.assertTrue(polinomio.evaluarRecursiva(2) == 0);
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
@@ -58,11 +56,9 @@ public class PolinomioTest {
 	
 	@Test
 	public void evaluarRecursivaParTest() {
-		double[] coeficientes = {1,2};
-		Polinomio polinomio1 = new Polinomio(1,coeficientes);
 		long start = System.currentTimeMillis();
     
-		Assert.assertTrue(polinomio1.evaluarRecursivaPar(20) == 22);
+		Assert.assertTrue(polinomio.evaluarRecursivaPar(2) == 0);
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
@@ -72,11 +68,9 @@ public class PolinomioTest {
 	
 	@Test
 	public void evaluarHornerTest() {
-		double[] coeficientes = {12,-12};
-		Polinomio polinomio1 = new Polinomio(1,coeficientes);
 		long start = System.currentTimeMillis();
 		
-		Assert.assertTrue(polinomio1.evaluarHorner(3) == 24);
+		Assert.assertTrue(polinomio.evaluarHorner(2) == 0);
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
@@ -85,11 +79,9 @@ public class PolinomioTest {
 	
 	@Test
 	public void evaluarPowTest(){
-		double[] coeficientes = {-40,1};
-		Polinomio polinomio1 = new Polinomio(1,coeficientes);
 		long start = System.currentTimeMillis();
 		
-		Assert.assertTrue(polinomio1.evaluarPow(2) == -79);
+		Assert.assertTrue(polinomio.evaluarPow(2) == 0);
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
@@ -99,11 +91,9 @@ public class PolinomioTest {
 	
 	@Test
 	public  void evaluarProgDinamicaTest(){
-		double[] coeficientes = {3,1, 10};
-		Polinomio polinomio1 = new Polinomio(2,coeficientes);
 		long start = System.currentTimeMillis();
     
-		Assert.assertTrue(polinomio1.evaluarProgDinamica(1) == 14);
+		Assert.assertTrue(polinomio.evaluarProgDinamica(2) == 0);
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
