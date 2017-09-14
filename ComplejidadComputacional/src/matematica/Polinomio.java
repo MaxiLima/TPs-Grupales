@@ -51,6 +51,16 @@ public class Polinomio {
 		return resultado;
 	}
 	
+	public double evaluarMejorada(double x) {
+		
+		double resultado = 0;
+		int i, j ;
+		for ( i = this.getGrado(), j = 1 ; i >= 0 ; i--, j*=x) 
+		 resultado += this.getCoeficientes()[i]*(j);
+		
+		return resultado;
+	}
+	
 	
 	public double evaluarMSucesivas(double x) {
 		
