@@ -42,10 +42,11 @@ public class Polinomio {
 		double resultado = 0;
 		double pot = 1;
 		
-		for (int i = this.getGrado(); i >= 0; i--) {
+		for (int i = 0; i < this.getGrado(); i++) {
 			resultado += this.getCoeficientes()[i]*pot;
 			pot *= x; //O(1)
-		}//O(n)
+		}
+		//O(n)
 		
 		return resultado;
 	}
@@ -113,7 +114,7 @@ public class Polinomio {
 		
 		double resultado = 1;
 		
-		for (int i = pot; i > 0; i--) 
+		for (int i = 0; i < pot; i++) 
 			resultado *= numero;
 			
 		

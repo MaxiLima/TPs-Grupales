@@ -60,20 +60,20 @@ public class BinomioNewton {
 	
 	public String mostrarBinomioResuelto() {
 		
-		StringBuffer sb = new StringBuffer();
+		StringBuffer buffer = new StringBuffer();
 		int [] terminos = obtenerTerminosTarta(this.getGrado() +1);
-		double temporal;
+		double aux;
 		for(int i = 0, j = this.getGrado(); i <= this.getGrado() ; j--,i ++) {
 			
-			temporal = terminos[i]*Math.pow(this.getX(), j)*Math.pow(this.getB(),i);
-			if(temporal > 0)
-			sb.append("+");
-			sb.append(temporal);
-			sb.append("X");
-			sb.append(j);
+			aux = terminos[i]*Math.pow(this.getX(), j)*Math.pow(this.getB(),i);
+			if(aux > 0)
+			buffer.append("+");
+			buffer.append(aux);
+			buffer.append("X");
+			buffer.append(j);
 			
 		}
-		return sb.toString();
+		return buffer.toString();
 	}
 	
 	public  double resolverBinomio() {
@@ -92,16 +92,16 @@ public class BinomioNewton {
 	//METODO DE CLASE
 	public static double resolverBinomio(double x, double b, int grado,double valor) {
 		
-		double retorno = 0;
+		double resultado = 0;
 		int[] terminos = new int[grado];
 		
 		terminos = obtenerTerminosTarta(grado+1);
 		for (int i = grado, j =0; i >= 0; i--, j++) 
-			retorno += terminos[j] * Math.pow(valor*x, i) * Math.pow(b, j);
+			resultado += terminos[j] * Math.pow(valor*x, i) * Math.pow(b, j);
 		
 		
 
-		return retorno;
+		return resultado;
 	}
 	
 	
