@@ -33,23 +33,40 @@ public class PolinomioTest {
 		double[] coeficientes = {2,2,4};
 		Polinomio polinomio1 = new Polinomio(2,coeficientes);
 		
+		long start = System.currentTimeMillis();
+		
 		Assert.assertTrue(polinomio1.evaluarMSucesivas(2) == 16);
+		
+		long stop = System.currentTimeMillis();
+		long tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ms");
 	}
 	
 	@Test
 	public void evaluarRecursivaTest() {
 		double[] coeficientes = {2,2,4};
 		Polinomio polinomio1 = new Polinomio(2,coeficientes);
-    
+		
+		long start = System.currentTimeMillis();
+		
 		Assert.assertTrue(polinomio1.evaluarRecursiva(2) == 16);
+		
+		long stop = System.currentTimeMillis();
+		long tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ms");
 	}
 	
 	@Test
 	public void evaluarRecursivaParTest() {
 		double[] coeficientes = {1,2};
 		Polinomio polinomio1 = new Polinomio(1,coeficientes);
+		long start = System.currentTimeMillis();
     
 		Assert.assertTrue(polinomio1.evaluarRecursivaPar(20) == 22);
+		
+		long stop = System.currentTimeMillis();
+		long tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ms");
 	}
 	
 	
@@ -57,24 +74,40 @@ public class PolinomioTest {
 	public void evaluarHornerTest() {
 		double[] coeficientes = {12,-12};
 		Polinomio polinomio1 = new Polinomio(1,coeficientes);
-    
+		long start = System.currentTimeMillis();
+		
 		Assert.assertTrue(polinomio1.evaluarHorner(3) == 24);
+		
+		long stop = System.currentTimeMillis();
+		long tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ms");
 	}
 	
 	@Test
 	public void evaluarPowTest(){
 		double[] coeficientes = {-40,1};
 		Polinomio polinomio1 = new Polinomio(1,coeficientes);
-    
+		long start = System.currentTimeMillis();
+		
 		Assert.assertTrue(polinomio1.evaluarPow(2) == -79);
+		
+		long stop = System.currentTimeMillis();
+		long tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarPowTest: " + tiempo + " ms");
+		
 	}
 	
 	@Test
 	public  void evaluarProgDinamicaTest(){
 		double[] coeficientes = {3,1, 10};
 		Polinomio polinomio1 = new Polinomio(2,coeficientes);
+		long start = System.currentTimeMillis();
     
 		Assert.assertTrue(polinomio1.evaluarProgDinamica(1) == 14);
+		
+		long stop = System.currentTimeMillis();
+		long tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms");
 		
 	}
 }
