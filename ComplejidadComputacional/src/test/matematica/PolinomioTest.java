@@ -14,7 +14,7 @@ public class PolinomioTest {
 	
 	@Before
 	public void setUp() {
-		polinomio = new Polinomio(6);	
+		polinomio = new Polinomio(4);	
 	}
 	
 	@Test
@@ -32,7 +32,7 @@ public class PolinomioTest {
 	public void evaluarMSucesivaTest() {
 		double[] coeficientes = {2,2,4};
 		Polinomio polinomio1 = new Polinomio(2,coeficientes);
-    
+		
 		Assert.assertTrue(polinomio1.evaluarMSucesivas(2) == 16);
 	}
 	
@@ -71,10 +71,10 @@ public class PolinomioTest {
 	
 	@Test
 	public  void evaluarProgDinamicaTest(){
-		double[] coeficientes = {3,1,-7};
+		double[] coeficientes = {3,1, 10};
 		Polinomio polinomio1 = new Polinomio(2,coeficientes);
     
-		Assert.assertTrue(polinomio1.evaluarProgDinamica(12) == 437);
+		Assert.assertTrue(polinomio1.evaluarProgDinamica(1) == 14);
 		
 	}
 }
