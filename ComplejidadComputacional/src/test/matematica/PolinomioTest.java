@@ -100,4 +100,16 @@ public class PolinomioTest {
 		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms");
 		
 	}
+	
+	@Test
+	public  void evaluarMejoradaTest(){
+		long start = System.currentTimeMillis();
+    
+		Assert.assertTrue(polinomio.evaluarProgDinamica(2) == 0);
+		
+		long stop = System.currentTimeMillis();
+		long tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms");
+		
+	}
 }

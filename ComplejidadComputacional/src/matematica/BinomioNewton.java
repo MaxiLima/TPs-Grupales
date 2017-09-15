@@ -1,5 +1,4 @@
 package matematica;
-import matematica.Polinomio;
 
 public class BinomioNewton {
 
@@ -103,17 +102,6 @@ public class BinomioNewton {
 		
 
 		return resultado;
-	}
-	
-	public static void main(String [ ] args){
-		BinomioNewton binomio = new BinomioNewton(5,4,-2);
-		System.out.println(binomio.resolverBinomio());
-		
-		double[] coeficientes = {-1,15,5,14,-9,-6,21,-4,10,7,-21,-47, 34,1,12,56,12,6,7,-3,88,11,31,-50,48,-102,9,-2500};
-		Polinomio poli = new Polinomio(27, coeficientes);
-		
-		System.out.println(poli.evaluarMSucesivas(16));
-	}
-	
+	}	
 	
 }

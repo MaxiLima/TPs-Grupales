@@ -11,14 +11,15 @@ public class BinomioTest {
 	BinomioNewton binomio ;
 	@Before
 	public void setUp() {
-		binomio = new BinomioNewton(5,4,-2);
+		binomio = new BinomioNewton(3000,4664,1022);
 	}
 
 	@Test
 	public void obtenerTerminosTartaTest() {
-		int[]resultado = new int[binomio.getGrado()];
-		int[]esperado = {1,5,10,10,5,1};
-		resultado = BinomioNewton.obtenerTerminosTarta(binomio.getGrado() + 1);
+		BinomioNewton binom = new BinomioNewton(20,4,4);
+		int[]resultado = new int[binom.getGrado()];
+		int[]esperado = {1,20,190,1140,4845,15504,38760,77520,125970,167960,184756,167960,125970,77520,38760,15504,4845,1140,190,20,1};
+		resultado = BinomioNewton.obtenerTerminosTarta(binom.getGrado() + 1);
 		long start = System.currentTimeMillis();
 		
 		Assert.assertArrayEquals(esperado, resultado);
@@ -33,7 +34,7 @@ public class BinomioTest {
 	public void resolverBinomioTest() {
 		long start = System.currentTimeMillis();
 		
-		Assert.assertTrue(binomio.resolverBinomio() == 32);
+		Assert.assertTrue(binomio.resolverBinomio() != 0 );
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
@@ -44,7 +45,7 @@ public class BinomioTest {
 	public void resolverBinomioEstaticoTest() {
 		
 		long start = System.currentTimeMillis();
-		Assert.assertTrue(BinomioNewton.resolverBinomio(3, 5, 2,1)==64);
+		Assert.assertTrue(BinomioNewton.resolverBinomio(10000000, 3151, 8421,2156) !=  0);
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
