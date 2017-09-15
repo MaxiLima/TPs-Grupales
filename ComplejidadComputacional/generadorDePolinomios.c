@@ -9,7 +9,7 @@
 int main()
 {
     //valores
-    int valor, grado=2, i;
+    int valor, grado=1, i;
     int hora=time(NULL);
     FILE *pf;
     pf=fopen("poliGradoXXX.in","w");
@@ -21,11 +21,10 @@ int main()
     scanf("%d",&grado);
 	if(grado<=0)
 		grado=100;
-	
-    //grado=5;
 
-    //genera
+    //escribe el grado N al inicio del .IN
     fprintf(pf,"%d\n",grado);
+    //copia los N valores siguientes
     for(i=0;i<=grado;i++)
     {
         valor=rand();
