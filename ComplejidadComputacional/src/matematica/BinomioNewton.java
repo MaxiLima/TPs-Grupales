@@ -40,10 +40,10 @@ public class BinomioNewton {
 	}
 
 	
-	public static int[] obtenerTerminosTarta(int nivel) {
+	public static long[] obtenerTerminosTarta(int nivel) {
 		
-		int[] resultado = new int[nivel];
-		int[][] tartaglia = new int[nivel][nivel];
+		long[] resultado = new long[nivel];
+		long[][] tartaglia = new long[nivel][nivel];
 		
 	    for(int i = 0 ; i < nivel; i++)
 	    {
@@ -61,7 +61,7 @@ public class BinomioNewton {
 	public String mostrarBinomioResuelto() {
 		
 		StringBuffer buffer = new StringBuffer();
-		int [] terminos = obtenerTerminosTarta(this.getGrado() +1);
+		long[] terminos = obtenerTerminosTarta(this.getGrado() +1);
 		double aux;
 		for(int i = 0, j = this.getGrado(); i <= this.getGrado() ; j--,i ++) {
 			
@@ -79,7 +79,7 @@ public class BinomioNewton {
 	public  double resolverBinomio() {
 		
 		double resultado = 0;
-		int[] terminos = new int[this.getGrado()];
+		long[] terminos = new long[this.getGrado()];
 		terminos = obtenerTerminosTarta(this.getGrado()+1);
 		for (int i = this.getGrado(), j = 0; i >= 0; i--, j++) {
 			resultado += terminos[j]* Math.pow(this.x, i) * Math.pow(this.b, j);
@@ -93,7 +93,7 @@ public class BinomioNewton {
 	public static double resolverBinomio(double x, double b, int grado,double valor) {
 		
 		double resultado = 0;
-		int[] terminos = new int[grado];
+		long[] terminos = new long[grado];
 		
 		terminos = obtenerTerminosTarta(grado+1);
 		for (int i = grado, j =0; i >= 0; i--, j++) 

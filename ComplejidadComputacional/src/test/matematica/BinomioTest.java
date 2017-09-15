@@ -16,9 +16,9 @@ public class BinomioTest {
 
 	@Test
 	public void obtenerTerminosTartaTest() {
-		BinomioNewton binom = new BinomioNewton(20,4,4);
-		int[]resultado = new int[binom.getGrado()];
-		int[]esperado = {1,20,190,1140,4845,15504,38760,77520,125970,167960,184756,167960,125970,77520,38760,15504,4845,1140,190,20,1};
+		BinomioNewton binom = new BinomioNewton(30,4,4);
+		long[]resultado = new long[binom.getGrado()];
+		long[]esperado = {1,30,435,4060,27405,142506,593775,2035800,5852925,14307150,30045015,54627300,86493225,119759850,145422675,155117520,145422675,119759850,86493225,54627300,30045015,14307150,5852925,2035800,593775,142506,27405,4060,435,30,1,};
 		resultado = BinomioNewton.obtenerTerminosTarta(binom.getGrado() + 1);
 		long start = System.currentTimeMillis();
 		
