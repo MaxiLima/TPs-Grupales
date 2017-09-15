@@ -44,9 +44,9 @@ public class Polinomio {
 		
 		for (int i = this.getGrado(); i >= 0; i--) {
 			resultado += this.getCoeficientes()[i]*pot;
-			pot *= x; //O(1)
+			pot *= x; 
 		}
-		//O(n)
+		
 		
 		return resultado;
 	}
@@ -67,7 +67,7 @@ public class Polinomio {
 		double resultado = 0;
 		
 		for (int i = 0; i <= this.getGrado(); i++) 
-			resultado += this.getCoeficientes()[i]*potenciaPorMult(x, this.getGrado() - i );//O(n2)
+			resultado += this.getCoeficientes()[i]*potenciaPorMult(x, this.getGrado() - i );
 		
 		return resultado;
 	}

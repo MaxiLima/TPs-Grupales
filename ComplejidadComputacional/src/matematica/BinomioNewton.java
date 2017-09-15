@@ -89,7 +89,7 @@ public class BinomioNewton {
 		return resultado;
 	}
 	
-	//METODO DE CLASE
+
 	public static double resolverBinomio(double x, double b, int grado,double valor) {
 		
 		double resultado = 0;
