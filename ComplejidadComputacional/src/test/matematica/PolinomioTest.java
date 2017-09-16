@@ -11,11 +11,27 @@ import matematica.Polinomio;
 public class PolinomioTest {
 
 	private Polinomio polinomio;
+	private Polinomio polinomio2;
+	private Polinomio polinomio3;
 	
 	@Before
 	public void setUp() {
-		double[] coeficientes = {-1,-2,5,14,-9,-6,21,-4,10,7,-200,-828};
-		polinomio = new Polinomio(11, coeficientes);	
+		double[] coeficientes = {22,55,88,66,44,77,99,22,55,555,12,8,254,87,1,8,2,18,42,18,42,456,84,84
+								,54,564,84,21,25,45,8,64,51,21,8,78,545,42,154,587,821,18,724,2,18,42,418,424,
+								54,87,2,87,2,14,587,12,4,7,21,4,5,48,72,14,21,1,40,14,78,9,854,54,54,21,45,
+								45,87,65,12,47,58,55,88,77,77,88,55,22,44,55,55,88,66,22,55,11,33,55,44,234,123};
+		//System.out.println(coeficientes.length);
+		polinomio = new Polinomio(100, coeficientes);
+		
+		double[] coeficientes2 = {564,84,21,25,45,8,64,51,21,8,78,545,42,154,587,821,18,724,2,18,42,418,424,
+								54,87,2,87,2,14,587,12,4,7,21,4,5,48,72,14,21,1,40,14,78,9,854,54,54,21,45};
+		//System.out.println(coeficientes2.length);
+		polinomio2 = new Polinomio(49, coeficientes2);
+		
+		double[] coeficientes3 = {22,55,88,66,44,77,99,22,55,555,12};
+		polinomio3 = new Polinomio(10, coeficientes3);
+
+		
 	}
 	
 	@Test
@@ -33,83 +49,210 @@ public class PolinomioTest {
 	@Test
 	public void evaluarMSucesivaTest() {
 
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
 		
-		Assert.assertTrue(polinomio.evaluarMSucesivas(2) == 0);
+		Assert.assertTrue(polinomio.evaluarMSucesivas(12) != 0);
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ms");
+		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ms para grado 100");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarMSucesivas(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ms para grado 50");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio3.evaluarMSucesivas(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ms para grado 10");
+		
+		System.out.println();
+		
 	}
 	
 	@Test
 	public void evaluarRecursivaTest() {
 		
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
 		
-		Assert.assertTrue(polinomio.evaluarRecursiva(2) == 0);
+		Assert.assertTrue(polinomio.evaluarRecursiva(12) != 0);
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ms");
+		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ms para grado 100");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarRecursiva(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ms para grado 50");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio3.evaluarRecursiva(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ms para grado 10");
+		
+		System.out.println();
 	}
 	
 	@Test
 	public void evaluarRecursivaParTest() {
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
     
-		Assert.assertTrue(polinomio.evaluarRecursivaPar(2) == 0);
+		Assert.assertTrue(polinomio.evaluarRecursivaPar(12) != 0);
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ms");
+		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ms para grado 100");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarRecursivaPar(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ms para grado 50");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio3.evaluarRecursivaPar(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ms para grado 10");
+		
+		System.out.println();
 	}
 	
 	
 	@Test
 	public void evaluarHornerTest() {
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
 		
-		Assert.assertTrue(polinomio.evaluarHorner(2) == 0);
+		Assert.assertTrue(polinomio.evaluarHorner(12) != 0);
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ms");
+		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ms grado 100");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarHorner(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ms para grado 50");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio3.evaluarHorner(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ms para grado 10");
+		
+		System.out.println();
 	}
 	
 	@Test
 	public void evaluarPowTest(){
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
 		
-		Assert.assertTrue(polinomio.evaluarPow(2) == 0);
+		Assert.assertTrue(polinomio.evaluarPow(12) != 0);
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarPowTest: " + tiempo + " ms");
+		System.out.println("[Polinomio]evaluarPowTest: " + tiempo + " ms grado 100");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarPow(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarPowTest: " + tiempo + " ms para grado 50");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio3.evaluarPow(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarPowTestTest: " + tiempo + " ms para grado 10");
+		
+		System.out.println();
 		
 	}
 	
 	@Test
 	public  void evaluarProgDinamicaTest(){
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
     
-		Assert.assertTrue(polinomio.evaluarProgDinamica(2) == 0);
+		Assert.assertTrue(polinomio.evaluarProgDinamica(12) != 0);
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms");
+		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms para grado 100");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarProgDinamica(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms para grado 50");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarProgDinamica(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms para grado 10");
+		
+		System.out.println();
 		
 	}
 	
 	@Test
 	public  void evaluarMejoradaTest(){
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
     
-		Assert.assertTrue(polinomio.evaluarProgDinamica(2) == 0);
+		Assert.assertTrue(polinomio.evaluarMejorada(12) != 0);
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms");
+		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ms para grado 100");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarMejorada(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ms para grado 50");
+		////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(polinomio2.evaluarMejorada(12) != 0);
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ms para grado 10");
+		
+		System.out.println();
 		
 	}
 }

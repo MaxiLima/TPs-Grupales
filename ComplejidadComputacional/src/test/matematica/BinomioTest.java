@@ -44,6 +44,8 @@ public class BinomioTest {
 		long stop10 = System.currentTimeMillis();
 		long tiempo1 = stop10 - start;
 		System.out.println("[Binomio]obtenerTerminosTartaTest: " + tiempo1 + " ms para grado 10");
+		
+		System.out.println();
 	}
 	
 	
@@ -81,45 +83,48 @@ public class BinomioTest {
 		tiempo = stop - start;
 		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ms para grado 8000");		
 		
+		System.out.println();
 	}
 	
 	@Test
 	public void resolverBinomioEstaticoTest() {
 		
 		long start = System.currentTimeMillis();
-		Assert.assertTrue(BinomioNewton.resolverBinomio(1000, 3151, 8421,2156) !=  0);
+		Assert.assertTrue(BinomioNewton.resolverBinomio(456, 3151, 100,2156) !=  0);
 		
 		long stop = System.currentTimeMillis();
 		long tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 1.000");
+		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 100");
 		/////////////////////////////////////////////////////////////////////////////////
 		start = System.currentTimeMillis();
-		Assert.assertTrue(BinomioNewton.resolverBinomio(10000, 3151, 8421,2156) !=  0);
+		Assert.assertTrue(BinomioNewton.resolverBinomio(456, 3151, 1000,2156) !=  0);
 		
 		stop = System.currentTimeMillis();
 		tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 10.000" );
+		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 1.000" );
 		/////////////////////////////////////////////////////////////////////////////////
 		start = System.currentTimeMillis();
-		Assert.assertTrue(BinomioNewton.resolverBinomio(100000, 3151, 8421,2156) !=  0);
+		Assert.assertTrue(BinomioNewton.resolverBinomio(456, 3151, 2500,2156) !=  0);
 		
 		stop = System.currentTimeMillis();
 		tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 100.000");
+		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 2.500");
 		/////////////////////////////////////////////////////////////////////////////////
 		start = System.currentTimeMillis();
-		Assert.assertTrue(BinomioNewton.resolverBinomio(1000000, 3151, 8421,2156) !=  0);
+		Assert.assertTrue(BinomioNewton.resolverBinomio(456, 3151, 5000,2156) !=  0);
 		
 		stop = System.currentTimeMillis();
 		tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 1.000.000");
+		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 5.000");
 		/////////////////////////////////////////////////////////////////////////////////
 		start = System.currentTimeMillis();
-		Assert.assertTrue(BinomioNewton.resolverBinomio(10000000, 3151, 8421,2156) !=  0);
+		Assert.assertTrue(BinomioNewton.resolverBinomio(456, 3151, 10000,2156) !=  0);
 		
 		stop = System.currentTimeMillis();
 		tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 10.000.000");
+		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 10.000");
+		
+		System.out.println();
 	}
 	
 //	@Test
