@@ -55,7 +55,7 @@ public class PolinomioTest {
 		
 		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ms para grado 100");
+		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ns para grado 100");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -63,7 +63,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ms para grado 50");
+		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ns para grado 50");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -71,7 +71,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ms para grado 10");
+		System.out.println("[Polinomio]evaluarMSucesivaTest: " + tiempo + " ns para grado 10");
 		
 		System.out.println();
 		
@@ -86,7 +86,7 @@ public class PolinomioTest {
 		
 		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ms para grado 100");
+		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ns para grado 100");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -94,7 +94,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ms para grado 50");
+		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ns para grado 50");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -102,7 +102,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ms para grado 10");
+		System.out.println("[Polinomio]evaluarRecursivaTest: " + tiempo + " ns para grado 10");
 		
 		System.out.println();
 	}
@@ -115,7 +115,7 @@ public class PolinomioTest {
 		
 		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ms para grado 100");
+		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ns para grado 100");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -123,7 +123,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ms para grado 50");
+		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ns para grado 50");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -131,7 +131,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ms para grado 10");
+		System.out.println("[Polinomio]evaluarRecursivaParTest: " + tiempo + " ns para grado 10");
 		
 		System.out.println();
 	}
@@ -145,7 +145,7 @@ public class PolinomioTest {
 		
 		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ms grado 100");
+		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ns grado 100");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -153,7 +153,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ms para grado 50");
+		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ns para grado 50");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -161,7 +161,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ms para grado 10");
+		System.out.println("[Polinomio]evaluarHornerTest: " + tiempo + " ns para grado 10");
 		
 		System.out.println();
 	}
@@ -174,7 +174,7 @@ public class PolinomioTest {
 		
 		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarPowTest: " + tiempo + " ms grado 100");
+		System.out.println("[Polinomio]evaluarPowTest: " + tiempo + " ns grado 100");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -182,7 +182,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarPowTest: " + tiempo + " ms para grado 50");
+		System.out.println("[Polinomio]evaluarPowTest: " + tiempo + " ns para grado 50");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -190,7 +190,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarPowTestTest: " + tiempo + " ms para grado 10");
+		System.out.println("[Polinomio]evaluarPowTestTest: " + tiempo + " ns para grado 10");
 		
 		System.out.println();
 		
@@ -204,7 +204,7 @@ public class PolinomioTest {
 		
 		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms para grado 100");
+		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ns para grado 100");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -212,7 +212,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms para grado 50");
+		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ns para grado 50");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -220,7 +220,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ms para grado 10");
+		System.out.println("[Polinomio]evaluarProgDinamicaTest: " + tiempo + " ns para grado 10");
 		
 		System.out.println();
 		
@@ -234,7 +234,7 @@ public class PolinomioTest {
 		
 		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ms para grado 100");
+		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ns para grado 100");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -242,7 +242,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ms para grado 50");
+		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ns para grado 50");
 		////////////////////////////////////////////////////////////////////////////
 		start = System.nanoTime();
 		
@@ -250,7 +250,7 @@ public class PolinomioTest {
 		
 		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ms para grado 10");
+		System.out.println("[Polinomio]evaluarMejoradaTest: " + tiempo + " ns para grado 10");
 		
 		System.out.println();
 		
