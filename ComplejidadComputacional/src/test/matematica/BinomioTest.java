@@ -128,25 +128,18 @@ public class BinomioTest {
 		stop = System.currentTimeMillis();
 		tiempo = stop - start;
 		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 5.000");
-		/////////////////////////////////////////////////////////////////////////////////
-		start = System.currentTimeMillis();
-		Assert.assertTrue(BinomioNewton.resolverBinomio(456, 3151, 10000,2156) !=  0);
 		
-		stop = System.currentTimeMillis();
-		tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioEstaticoTest: " + tiempo + " ms para grado 10.000");
-		
-		System.out.println();
 	}
 	
-//	@Test
-//	public void mostrarBinomioTest() {
-//		String resultado = "+16.0X2-16.0X1+4.0X0";
-//		long start = System.currentTimeMillis();
-//		Assert.assertEquals(resultado, binomio.mostrarBinomioResuelto());
-//		
-//		long stop = System.currentTimeMillis();
-//		long tiempo = stop - start;
-//		System.out.println("[Binomio]mostrarBinomioTest: " + tiempo + " ms");
-//	}
+	@Test
+	public void mostrarBinomioTest() {
+		BinomioNewton bin  =  new BinomioNewton(2, 4, -2);
+		String resultado = "+16.0X2-16.0X1+4.0X0";
+		long start = System.currentTimeMillis();
+		Assert.assertEquals(resultado, bin.mostrarBinomioResuelto());
+		
+		long stop = System.currentTimeMillis();
+		long tiempo = stop - start;
+		System.out.println("[Binomio]mostrarBinomioTest: " + tiempo + " ms");
+	}
 }
