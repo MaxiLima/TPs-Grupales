@@ -1,5 +1,14 @@
 package utilidades;
 
-public abstract class Item {
+import juegoestrategico.Personaje;
+import juegoestrategico.Unidad;
+
+public abstract class Item implements Personaje{
+	
+	
+
+	protected Unidad unidad;
+	
+	
 
 }

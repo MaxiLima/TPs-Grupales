@@ -1,5 +1,5 @@
 package utilidades;
 
-public class Escudo {
+public class Escudo extends Item{
 
 }

@@ -6,9 +6,12 @@ public class Arquero extends Unidad{
 	
 	public Arquero(int posX,int posY){
 		
-		super(5,20, posX, posY);
+		super(5,20,100, posX, posY);
 		this.flechas = 20;
 	}
 	
+	public void cargarFlechas(){
+		this.flechas += 6;
+	}
 	
 }
