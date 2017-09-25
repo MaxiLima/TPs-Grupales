@@ -1,19 +1,23 @@
 package juegoestrategico;
 
-public abstract class Unidad implements Personaje {
+public abstract class Unidad implements Personaje{
 	
 	protected double daño;
 	protected double salud;
 	protected int energia;
 	protected int posX;
 	protected int posY;
+	protected int distanciaMin;
+	protected int distanciaMax;
 	
-	public Unidad(double daño, double salud,int energia, int posX, int posY) {
+	public Unidad(double daño, double salud,int energia, int posX, int posY, int distanciaMin, int distanciaMax) {
 		this.daño = daño;
 		this.salud = salud;
 		this.energia = energia;
 		this.posX = posX;
 		this.posY = posY;
+		this.distanciaMin = distanciaMin;
+		this.distanciaMax = distanciaMax;
 	}
 	
 	
@@ -55,11 +59,44 @@ public abstract class Unidad implements Personaje {
 		this.posY = posY;
 	}
 	
+	public int getDistanciaMin() {
+		return distanciaMin;
+	}
+
+	public void setDistanciaMin(int distanciaMin) {
+		this.distanciaMin = distanciaMin;
+	}
+
+
+	public int getDistanciaMax() {
+		return distanciaMax;
+	}
+
+
+	public void setDistanciaMax(int distanciaMax) {
+		this.distanciaMax = distanciaMax;
+	}
+
+
 	public double distanciaConEnemigo(Unidad that){
 		
 		return Math.sqrt(Math.pow(this.getPosX() - that.getPosX(), 2) + Math.pow(this.getPosY() - that.getPosY(), 2));
 	}
 	
+	public void moverHacia(int x, int y){
+		this.posX = x;
+		this.posY = y;
+	}
+	
+	public abstract void atacar();
+	public abstract boolean puedeAtacar();
+	
+	//Template de la pelea con otra unidad
+	
+	public void peleaCon(Unidad enemigo){
+		
+	}
+
 	
 	
 }

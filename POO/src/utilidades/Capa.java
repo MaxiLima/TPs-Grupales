@@ -1,19 +1,29 @@
 package utilidades;
 
-import juegoestrategico.Unidad;
+import juegoestrategico.Personaje;
 
-public class Capa extends Item{
-	
-	public Capa(Unidad that){
-		this.unidad = that;
+public class Capa extends PersonajeDecorator{
+
+	public Capa(Personaje personaje) {
+		super(personaje);
 	}
 
-	public int getEnergia(){
-		return this.unidad.getEnergia() * 2;
-		
+	@Override
+	public double getSalud() {
+		return getPersonaje().getSalud();
 	}
+
+	@Override
+	public double getDaño() {
+		return getPersonaje().getDaño() * 0.9;
+	}
+
+	@Override
+	public int getEnergia() {
+		return getPersonaje().getEnergia() *2;
+	} 
 	
-	public double getDaño(){
-		return this.unidad.getDaño() * 0.9;
-	}
+	
+	
+	
 }
