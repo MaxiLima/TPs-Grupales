@@ -2,9 +2,9 @@ package utilidades;
 
 import juegoestrategico.Unidad;
 
-public class Capa extends UnidadDecorator{
+public class Punial extends UnidadDecorator{
 
-	public Capa(Unidad unidad) {
+	public Punial(Unidad unidad) {
 		this.unidad = unidad;
 	}
 
@@ -30,7 +30,7 @@ public class Capa extends UnidadDecorator{
 
 	@Override
 	public void recibirAtaque(double golpe) {
-		this.unidad.recibirAtaque(golpe);
+		this.unidad.recibirAtaque(golpe + 3);
 	}
 	
 	@Override
@@ -42,14 +42,14 @@ public class Capa extends UnidadDecorator{
 	
 //	@Override
 //	public void setEnergia(int energia){
-//		this.unidad.setEnergia(energia * 2);
+//		this.unidad.setEnergia(energia);
 //	}
 //	
 //	@Override
 //	public void setPoder(double poder){
-//		this.unidad.setPoder(poder * 0.9);
+//		this.unidad.setPoder(poder + 3);
 //	}
-	
+//	
 //	@Override
 //	public void setName(String name) {
 //		unidad.setName(name);
@@ -89,7 +89,7 @@ public class Capa extends UnidadDecorator{
 	
 	@Override
 	public double getPoder() {
-		return unidad.getPoder() * 0.9;
+		return unidad.getPoder() + 3;
 	}
 
 	@Override
@@ -99,7 +99,7 @@ public class Capa extends UnidadDecorator{
 	
 	@Override
 	public int getEnergia() {
-		return unidad.getEnergia() * 2;
+		return unidad.getEnergia();
 	}
 	
 	@Override
@@ -122,4 +122,5 @@ public class Capa extends UnidadDecorator{
 		return unidad.getDistanciaMax();
 	}
 	
+
 }

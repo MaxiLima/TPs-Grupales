@@ -6,7 +6,11 @@ public class Caballero extends Unidad{
 	private int cantAtaques;
 	
 	public Caballero(String name) {
-		super(name,50, 200,100,1,2);
+		this.name = name;
+		this.poder = 50;
+		this.salud = 200;
+		this.distanciaMin = 1;
+		this.distanciaMax = 2;
 		this.caballoRebelde = false;
 		this.cantAtaques = 0;
 	}

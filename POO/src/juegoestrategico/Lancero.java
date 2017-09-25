@@ -3,7 +3,11 @@ package juegoestrategico;
 public class Lancero extends Unidad{
 	
 	public Lancero(String name){
-		super(name,25, 150,100,1,3);
+		this.name = name;
+		this.poder = 25;
+		this.salud = 150;
+		this.distanciaMin = 1;
+		this.distanciaMax = 3;
 	}
 
 	@Override
@@ -34,5 +38,11 @@ public class Lancero extends Unidad{
 	public void moverHacia(int x, int y){
 		this.posX = x;
 		this.posY = y;
+	}
+
+	@Override
+	public void tomarPocionAgua() {
+		// TODO Auto-generated method stub
+		
 	}
 }

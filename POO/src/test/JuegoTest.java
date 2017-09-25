@@ -1,6 +1,6 @@
 package test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,8 +10,8 @@ import utilidades.*;
 
 public class JuegoTest {
 
-	Personaje soldado1;
-	Personaje soldado2;
+	Unidad soldado1;
+	Unidad soldado2;
 	
 	@Before
 	public void before(){
@@ -24,11 +24,28 @@ public class JuegoTest {
 	@Test
 	public void soldadosTest() {
 		
-		assertTrue(soldado1.getDaño() == 10);
+		soldado1 = new Punial(soldado1); 
 		
-		soldado2 = new Puñal(soldado2);
+		assertTrue(soldado1.getPoder() == 13);
 		
-		assertTrue(soldado2.getDaño() == 13);
+		soldado2 = new Escudo(soldado2);
+		
+		assertTrue(soldado2.getPoder() == 10);
+		
+		soldado1.moverHacia(2, 1);
+		soldado2.moverHacia(2, 0);
+		
+		soldado1.peleaCon(soldado2);
+		System.out.println(soldado2.getSalud());
+		assertTrue(soldado2.getSalud() == 194.8);
+		assertTrue(soldado1.getEnergia() == 90);
+		
+		soldado1.tomarPocionAgua();
+		
+		System.out.println(soldado1.getEnergia());
+		assertTrue(soldado1.getEnergia() == 100);
+		
+		
 		
 		
 	}

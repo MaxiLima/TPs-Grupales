@@ -4,16 +4,19 @@ public class Soldado extends Unidad{
 
 	
 	public Soldado(String name) {
-		super(name,10,200,100, 0,1);
+		this.name = name;
+		this.poder = 10;
+		this.salud = 200;
+		this.energia = 100;
+		this.distanciaMin = 0;
+		this.distanciaMax = 1;
 	}
 	
-	public void tomarPocionAgua(){
-		this.energia = 100;
-	}
+
 
 	@Override
 	public void atacar() {
-		
+		this.setEnergia(this.getEnergia() - 10);
 	}
 
 	@Override
@@ -25,7 +28,7 @@ public class Soldado extends Unidad{
 
 	@Override
 	public void recibirAtaque(double golpe) {
-		// TODO Auto-generated method stub
+		this.setSalud(this.getSalud() - golpe);
 		
 	}
 	
@@ -39,6 +42,13 @@ public class Soldado extends Unidad{
 	public void moverHacia(int x, int y){
 		this.posX = x;
 		this.posY = y;
+	}
+
+
+
+	@Override
+	public void tomarPocionAgua() {
+		this.energia = 100;
 	}
 	
 	

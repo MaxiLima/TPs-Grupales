@@ -6,7 +6,11 @@ public class Arquero extends Unidad{
 	
 	public Arquero(String name){
 		
-		super(name,5,20,100,2,5);
+		this.name = name;
+		this.poder = 5;
+		this.salud = 50;
+		this.distanciaMin = 2;
+		this.distanciaMax = 5;
 		this.flechas = 20;
 	}
 	
@@ -47,6 +51,12 @@ public class Arquero extends Unidad{
 	public void moverHacia(int x, int y){
 		this.posX = x;
 		this.posY = y;
+	}
+
+	@Override
+	public void tomarPocionAgua() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
