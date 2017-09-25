@@ -5,8 +5,8 @@ public class Caballero extends Unidad{
 	private boolean caballoRebelde;
 	private int cantAtaques;
 	
-	public Caballero(int posX,int posY) {
-		super(50, 200,100, posX, posY,1,2);
+	public Caballero(String name) {
+		super(name,50, 200,100,1,2);
 		this.caballoRebelde = false;
 		this.cantAtaques = 0;
 	}
@@ -33,7 +33,24 @@ public class Caballero extends Unidad{
 			return true;
 		return false;
 	}
+
+	@Override
+		public void recibirAtaque(double golpe) {
+		
+		this.setSalud(this.getSalud() - golpe);
+	}
 	
+	@Override
+    public double distanciaConEnemigo(Unidad that){
+		
+		return Math.sqrt(Math.pow(this.getPosX() - that.getPosX(), 2) + Math.pow(this.getPosY() - that.getPosY(), 2));
+	}
+	
+	@Override
+	public void moverHacia(int x, int y){
+		this.posX = x;
+		this.posY = y;
+	}
 	
 
 }

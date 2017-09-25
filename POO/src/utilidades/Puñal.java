@@ -22,6 +22,17 @@ public class Puñal extends PersonajeDecorator{
 	public int getEnergia() {
 		return 0;
 	}
+
+	@Override
+	public void setSalud(double salud) {
+		getPersonaje().setSalud(salud);
+	} 
+
+	@Override
+	public void recibirAtaque(double golpe) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

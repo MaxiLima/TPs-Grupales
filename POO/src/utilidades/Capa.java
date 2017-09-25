@@ -21,6 +21,16 @@ public class Capa extends PersonajeDecorator{
 	@Override
 	public int getEnergia() {
 		return getPersonaje().getEnergia() *2;
+	}
+
+	@Override
+	public void recibirAtaque(double golpe) {
+		
+	}
+
+	@Override
+	public void setSalud(double salud) {
+		getPersonaje().setSalud(salud);
 	} 
 	
 	

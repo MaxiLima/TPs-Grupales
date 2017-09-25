@@ -2,6 +2,7 @@ package juegoestrategico;
 
 public abstract class Unidad implements Personaje{
 	
+	protected String name;
 	protected double daño;
 	protected double salud;
 	protected int energia;
@@ -10,27 +11,34 @@ public abstract class Unidad implements Personaje{
 	protected int distanciaMin;
 	protected int distanciaMax;
 	
-	public Unidad(double daño, double salud,int energia, int posX, int posY, int distanciaMin, int distanciaMax) {
+	public Unidad(String name,double daño, double salud,int energia, int distanciaMin, int distanciaMax) {
+		
+		this.name = name;
 		this.daño = daño;
 		this.salud = salud;
 		this.energia = energia;
-		this.posX = posX;
-		this.posY = posY;
 		this.distanciaMin = distanciaMin;
 		this.distanciaMax = distanciaMax;
 	}
 	
-	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public double getDaño() {
 		return daño;
 	}
-	public void setDaño(int daño) {
+	public void setDaño(double daño) {
 		this.daño = daño;
 	}
 	public double getSalud() {
 		return salud;
 	}
-	public void setSalud(int salud) {
+	public void setSalud(double salud) {
 		this.salud = salud;
 	}
 
@@ -78,24 +86,29 @@ public abstract class Unidad implements Personaje{
 	}
 
 
-	public double distanciaConEnemigo(Unidad that){
-		
-		return Math.sqrt(Math.pow(this.getPosX() - that.getPosX(), 2) + Math.pow(this.getPosY() - that.getPosY(), 2));
-	}
 	
-	public void moverHacia(int x, int y){
-		this.posX = x;
-		this.posY = y;
-	}
-	
+	public abstract double distanciaConEnemigo(Unidad that);
+	public abstract void moverHacia(int x, int y);
 	public abstract void atacar();
 	public abstract boolean puedeAtacar();
+	public abstract void recibirAtaque(double golpe);
 	
 	//Template de la pelea con otra unidad
 	
 	public void peleaCon(Unidad enemigo){
 		
+		if((this.distanciaConEnemigo(enemigo)>=this.getDistanciaMin()
+			&& this.distanciaConEnemigo(enemigo)<=this.getDistanciaMax()) && this.puedeAtacar()) {
+			
+			this.atacar();
+			enemigo.recibirAtaque(this.getDaño());
+			
+		}
+		
+		if(enemigo.getSalud()<=0)
+			System.out.println(this.getName() + " mato a " + enemigo.getName());
 	}
+	
 
 	
 	

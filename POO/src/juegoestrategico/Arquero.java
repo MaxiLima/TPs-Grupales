@@ -4,9 +4,9 @@ public class Arquero extends Unidad{
 	
 	private int flechas;
 	
-	public Arquero(int posX,int posY){
+	public Arquero(String name){
 		
-		super(5,20,100, posX, posY,2,5);
+		super(name,5,20,100,2,5);
 		this.flechas = 20;
 	}
 	
@@ -29,6 +29,24 @@ public class Arquero extends Unidad{
 		if(this.getFlechas()>0)
 			return true;
 		return false;
+	}
+
+	@Override
+	public void recibirAtaque(double golpe) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+    public double distanciaConEnemigo(Unidad that){
+		
+		return Math.sqrt(Math.pow(this.getPosX() - that.getPosX(), 2) + Math.pow(this.getPosY() - that.getPosY(), 2));
+	}
+	
+	@Override
+	public void moverHacia(int x, int y){
+		this.posX = x;
+		this.posY = y;
 	}
 	
 }
