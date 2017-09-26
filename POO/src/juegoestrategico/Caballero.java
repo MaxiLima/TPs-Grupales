@@ -40,6 +40,7 @@ public class Caballero extends Unidad{
 	public boolean puedeAtacar() {
 		if(!caballoRebelde)
 			return true;
+		System.out.println(this.getName() + " no puede atacar!");
 		return false;
 	}
 

@@ -23,6 +23,7 @@ public class Soldado extends Unidad{
 	public boolean puedeAtacar() {
 		if(this.getEnergia()>=10)
 			return true;
+		System.out.println(this.getName() + " no puede atacar!");
 		return false;
 	}
 

@@ -32,6 +32,7 @@ public class Arquero extends Unidad{
 	public boolean puedeAtacar() {
 		if(this.getFlechas()>0)
 			return true;
+		System.out.println(this.getName() + " no puede atacar!");
 		return false;
 	}
 

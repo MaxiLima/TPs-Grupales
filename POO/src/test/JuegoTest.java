@@ -57,6 +57,8 @@ public class JuegoTest {
 		assertTrue(soldado1.getEnergia() == 200);
 		
 		
+		
+		
 	}
 	
 	@Test
@@ -129,7 +131,27 @@ public class JuegoTest {
 		
 		assertTrue(lancero2.getSalud() == 140);
 	}
+	
+	@Test
+	public void EnergiaTest(){
+		
+		assertTrue(soldado1.getEnergia() == 100);
+		for (int i = 0; i < 10; i++) {
+			soldado1.peleaCon(soldado2);
+		}
+		
+		assertTrue(soldado1.getEnergia() == 0);
+		assertTrue(soldado2.getSalud() == 100);
+		
+		soldado1.peleaCon(soldado2);
+		assertTrue(soldado2.getSalud() == 100);
+		
+		soldado1 = new Capa(soldado1);
+		
+		System.out.println(soldado1.getEnergia()); //ERROR. Muestra que tiene 100 de energia pero en realidad tiene 0
+		soldado1.peleaCon(soldado2);				//CONCLUSION: El decorator solo sirve para "decorar" no cambia atributos
 
+	}
 }
 
 

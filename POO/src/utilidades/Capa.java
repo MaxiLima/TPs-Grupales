@@ -99,7 +99,7 @@ public class Capa extends UnidadDecorator{
 	
 	@Override
 	public int getEnergia() {
-		return unidad.getEnergia() +100;
+		return unidad.getEnergia() + 100;
 	}
 	
 	@Override
