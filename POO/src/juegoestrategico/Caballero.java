@@ -21,6 +21,7 @@ public class Caballero extends Unidad{
 
 	public void tomarPocionAgua(){
 		this.caballoRebelde = false;
+		System.out.println("Horse chills down");
 		this.cantAtaques = 0;
 		
 	}

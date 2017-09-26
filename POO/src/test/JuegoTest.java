@@ -104,8 +104,31 @@ public class JuegoTest {
 		
 		caballero1.peleaCon(soldado1);
 		assertTrue(soldado1.getSalud() == 150);
+		
+		caballero1 = new Punial(caballero1);
+		caballero1.tomarPocionAgua();
+		
+		caballero1.peleaCon(soldado1);
+		assertTrue(soldado1.getSalud() == 97);
 	}
 	
+	@Test
+	public void LanceroTest(){
+		
+		lancero1.moverHacia(0, 0);
+		lancero2.moverHacia(0, 4);
+		
+		lancero1.peleaCon(lancero2);
+		
+		assertTrue(lancero2.getSalud() == 150);
+		
+		lancero2 = new Escudo(lancero2);
+		lancero2.moverHacia(0, 3);
+		
+		lancero1.peleaCon(lancero2);
+		
+		assertTrue(lancero2.getSalud() == 140);
+	}
 
 }
 
