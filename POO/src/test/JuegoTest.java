@@ -93,9 +93,17 @@ public class JuegoTest {
 		
 		caballero1.moverHacia(0, 1);
 		arquero1.moverHacia(0, 3);
-
+		arquero2.moverHacia(0, 3);
+		soldado1.moverHacia(0, 2);
+		
 		caballero1.peleaCon(arquero1);
 		assertTrue(arquero1.getSalud() == 0);
+		
+		caballero1.peleaCon(arquero2);
+		assertTrue(arquero2.getSalud() == 0);
+		
+		caballero1.peleaCon(soldado1);
+		assertTrue(soldado1.getSalud() == 150);
 	}
 	
 

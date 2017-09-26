@@ -28,8 +28,11 @@ public class Caballero extends Unidad{
 	@Override
 	public void atacar() {
 		this.cantAtaques ++;
-		if(this.cantAtaques >= 3)
+		if(this.cantAtaques >= 3){
 			this.caballoRebelde = true;
+			System.out.println("Horse has gone rogue!");
+		}
+			
 	}
 
 	@Override
