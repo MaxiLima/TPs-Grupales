@@ -12,7 +12,6 @@ public class Lancero extends Unidad{
 
 	@Override
 	public void atacar() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -24,7 +23,7 @@ public class Lancero extends Unidad{
 
 	@Override
 	public void recibirAtaque(double golpe) {
-		// TODO Auto-generated method stub
+		this.setSalud(this.getSalud() - golpe);
 		
 	}
 	

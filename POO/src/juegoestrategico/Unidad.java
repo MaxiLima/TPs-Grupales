@@ -99,9 +99,10 @@ public abstract class Unidad{
 			&& this.distanciaConEnemigo(enemigo)<=this.getDistanciaMax()) && this.puedeAtacar()) {
 			
 			this.atacar();
-			enemigo.recibirAtaque(this.getPoder());
-			
+			enemigo.recibirAtaque(this.getPoder());			
 		}
+		
+		
 		
 		if(enemigo.getSalud()<=0)
 			System.out.println(this.getName() + " mato a " + enemigo.getName());

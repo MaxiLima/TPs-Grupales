@@ -16,7 +16,7 @@ public class Soldado extends Unidad{
 
 	@Override
 	public void atacar() {
-		this.setEnergia(this.getEnergia() - 10);
+		this.energia -= 10;
 	}
 
 	@Override

@@ -27,8 +27,9 @@ public class Caballero extends Unidad{
 
 	@Override
 	public void atacar() {
-		// TODO Auto-generated method stub
-		
+		this.cantAtaques ++;
+		if(this.cantAtaques >= 3)
+			this.caballoRebelde = true;
 	}
 
 	@Override
@@ -39,8 +40,7 @@ public class Caballero extends Unidad{
 	}
 
 	@Override
-		public void recibirAtaque(double golpe) {
-		
+	public void recibirAtaque(double golpe) {
 		this.setSalud(this.getSalud() - golpe);
 	}
 	

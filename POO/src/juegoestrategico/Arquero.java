@@ -24,7 +24,7 @@ public class Arquero extends Unidad{
 
 	@Override
 	public void atacar() {
-		// TODO Auto-generated method stub
+		this.flechas --;
 		
 	}
 
@@ -37,8 +37,7 @@ public class Arquero extends Unidad{
 
 	@Override
 	public void recibirAtaque(double golpe) {
-		// TODO Auto-generated method stub
-		
+		this.setSalud(this.getSalud() - golpe);
 	}
 	
 	@Override
