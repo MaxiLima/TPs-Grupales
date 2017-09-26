@@ -12,12 +12,17 @@ public class BinomioTest {
 	BinomioNewton binomio1 ;
 	BinomioNewton binomio2 ;
 	BinomioNewton binomio3 ;
+	BinomioNewton binomio4 ;
+	BinomioNewton binomio5 ;
+	
 	@Before
 	public void setUp() {
-		binomio = new BinomioNewton(100,4664,1022);
-		binomio1 = new BinomioNewton(1000 , 1212,4654);
-		binomio2 = new BinomioNewton(3000,646,684);
-		binomio3 = new BinomioNewton(8000,557,87);
+		binomio = new BinomioNewton(10,4664,1022);
+		binomio1 = new BinomioNewton(20,4664,1022);
+		binomio2 = new BinomioNewton(30,4664,1022);
+		binomio3 = new BinomioNewton(40,4664,1022);
+		binomio4 = new BinomioNewton(50,4664,1022);
+		binomio5 = new BinomioNewton(60,4664,1022);
 	}
 
 //	@Test
@@ -63,37 +68,53 @@ public class BinomioTest {
 	
 	@Test
 	public void resolverBinomioTest() {
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
 		
 		Assert.assertTrue(binomio.resolverBinomio() != 0 );
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ms para grado 100");
+		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ns para grado 10");
 		///////////////////////////////////////////////////////////////////////////////
-		start = System.currentTimeMillis();
+		start = System.nanoTime();
 		
 		Assert.assertTrue(binomio1.resolverBinomio() != 0 );
 		
-		stop = System.currentTimeMillis();
+		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ms para grado 1000");
+		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ns para grado 20");
 		///////////////////////////////////////////////////////////////////////////////
-		start = System.currentTimeMillis();
+		start = System.nanoTime();
 		
 		Assert.assertTrue(binomio2.resolverBinomio() != 0 );
 		
-		stop = System.currentTimeMillis();
+		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ms para grado 3000");
+		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ns para grado 30");
 		///////////////////////////////////////////////////////////////////////////////
-		start = System.currentTimeMillis();
+		start = System.nanoTime();
 		
 		Assert.assertTrue(binomio3.resolverBinomio() != 0 );
 		
-		stop = System.currentTimeMillis();
+		stop = System.nanoTime();
 		tiempo = stop - start;
-		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ms para grado 8000");		
+		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ns para grado 40");	
+		///////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(binomio4.resolverBinomio() != 0 );
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ns para grado 50");
+		///////////////////////////////////////////////////////////////////////////////
+		start = System.nanoTime();
+		
+		Assert.assertTrue(binomio5.resolverBinomio() != 0 );
+		
+		stop = System.nanoTime();
+		tiempo = stop - start;
+		System.out.println("[Binomio]resolverBinomioTest: " + tiempo + " ns para grado 60");
 		
 		System.out.println();
 	}
@@ -135,182 +156,222 @@ public class BinomioTest {
 	public void mostrarBinomioTest() {
 		BinomioNewton bin  =  new BinomioNewton(2, 4, -2);
 		String resultado = "+16.0X2-16.0X1+4.0X0";
-		long start = System.currentTimeMillis();
+		long start = System.nanoTime();
 		Assert.assertEquals(resultado, bin.mostrarBinomioResuelto());
 		
-		long stop = System.currentTimeMillis();
+		long stop = System.nanoTime();
 		long tiempo = stop - start;
-		System.out.println("[Binomio]mostrarBinomioTest: " + tiempo + " ms");
+		System.out.println("[Binomio]mostrarBinomioTest: " + tiempo + " ns");
+		System.out.println("");
 	}
-	
 	@Test
-	public void queEvalueBienHornerGrado10(){
+	public void queEvalueBienHorner(){
 		long start = System.nanoTime();
 		Assert.assertTrue(binomio.evaluarHorner(1)!=0);		
 		long tiempo = System.nanoTime() - start;
 		System.out.println("[BinomioEvaluarHorner10: " + tiempo + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start1 = System.nanoTime();
+		Assert.assertTrue(binomio1.evaluarHorner(1)!=0);
+		long tiempo1 = System.nanoTime() - start1; 
+		System.out.println("[BinomioEvaluarHorner20: " + tiempo1 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start2 = System.nanoTime();
+		Assert.assertTrue(binomio2.evaluarHorner(1) !=0);
+		long tiempo2 = System.nanoTime() - start2; 
+		System.out.println("[BinomioEvaluarHorner30: " + tiempo2 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start3 = System.nanoTime();
+		Assert.assertTrue(binomio3.evaluarHorner(1) !=0);
+		long tiempo3 = System.nanoTime() - start3; 
+		System.out.println("[BinomioEvaluarHorner40: " + tiempo3 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start4 = System.nanoTime();
+		Assert.assertTrue(binomio4.evaluarHorner(1) !=0);
+		long tiempo4 = System.nanoTime() - start4; 
+		System.out.println("[BinomioEvaluarHorner50: " + tiempo4 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start5 = System.nanoTime();
+		Assert.assertTrue(binomio5.evaluarHorner(1) !=0);
+		long tiempo5 = System.nanoTime() - start5; 
+		System.out.println("[BinomioEvaluarHorner60: " + tiempo5 + " ns");
+		//////////////////////////////////////////////////////////////////
+		System.out.println("");
 	}	
 	
 	@Test
-	public void queEvalueBienHornerGrado20(){
+	public void queEvalueBienPow(){
 		long start = System.nanoTime();
-		Assert.assertTrue(binomio1.evaluarHorner(1)!=0);
-		long tiempo = System.nanoTime() - start; 
-		System.out.println("[BinomioEvaluarHorner20: " + tiempo + " ns");
-	}
-	
-	@Test
-	public void queEvalueBienHornerGrado30(){
-		long start = System.nanoTime();
-		Assert.assertTrue(binomio2.evaluarHorner(1) !=0);
-		long tiempo = System.nanoTime() - start; 
-		System.out.println("[BinomioEvaluarHorner30: " + tiempo + " ns");
-		System.out.println("");
-	}
-	
-	@Test
-	public void queEvalueBienPowGrado10(){
-		long start = System.nanoTime();
-		
 		Assert.assertTrue(binomio.evaluarPow(1)!=0);
-		
 		long tiempo = System.nanoTime() - start;
 		System.out.println("[BinomioEvaluarPowGrado10: " + tiempo + " ns");
-	}
-	
-	@Test
-	public void queEvalueBienPowGrado20(){
-		long start = System.nanoTime();
+		//////////////////////////////////////////////////////////////////
+		long start1 = System.nanoTime();
 		Assert.assertTrue(binomio1.evaluarPow(1)!=0);
-		long tiempo = System.nanoTime() - start; 
-		System.out.println("[BinomioEvaluarPowGrado20: " + tiempo + " ns");
-	}
-	
-	
-	@Test
-	public void queEvalueBienPowGrado30(){
-		long start = System.nanoTime();
+		long tiempo1 = System.nanoTime() - start1; 
+		System.out.println("[BinomioEvaluarPowGrado20: " + tiempo1 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start2 = System.nanoTime();
 		Assert.assertTrue(binomio2.evaluarPow(1)!=0);
-		long tiempo = System.nanoTime() - start; 
-		System.out.println("[BinomioEvaluarPowGrado30: " + tiempo + " ns");
+		long tiempo2 = System.nanoTime() - start2; 
+		System.out.println("[BinomioEvaluarPowGrado30: " + tiempo2 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start3 = System.nanoTime();
+		Assert.assertTrue(binomio3.evaluarPow(1)!=0);
+		long tiempo3 = System.nanoTime() - start3; 
+		System.out.println("[BinomioEvaluarPowGrado40: " + tiempo3 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start4 = System.nanoTime();
+		Assert.assertTrue(binomio4.evaluarPow(1)!=0);
+		long tiempo4 = System.nanoTime() - start4; 
+		System.out.println("[BinomioEvaluarPowGrado50: " + tiempo4 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start5 = System.nanoTime();
+		Assert.assertTrue(binomio5.evaluarPow(1)!=0);
+		long tiempo5 = System.nanoTime() - start5; 
+		System.out.println("[BinomioEvaluarPowGrado60: " + tiempo5 + " ns");
+		//////////////////////////////////////////////////////////////////
 		System.out.println("");
 	}
-	
+
 	@Test
-	public void queEvalueBienMSucesivasGrado10(){
+	public void queEvalueBienMSucesivas(){
 		long start = System.nanoTime();
-		
 		Assert.assertTrue(binomio.evaluarMSucesivas(1)!=0);
-		
 		long tiempo = System.nanoTime() - start;
 		System.out.println("[BinomioEvaluarMsucesivasGrado10: " + tiempo + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start1 = System.nanoTime();
+		Assert.assertTrue(binomio1.evaluarMSucesivas(1)!=0);
+		long tiempo1 = System.nanoTime() - start1;
+		System.out.println("[BinomioEvaluarMsucesivasGrado20: " + tiempo1 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start2 = System.nanoTime();
+		Assert.assertTrue(binomio2.evaluarMSucesivas(1)!=0);
+		long tiempo2 = System.nanoTime() - start2;
+		System.out.println("[BinomioEvaluarMsucesivasGrado30: " + tiempo2 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start3 = System.nanoTime();
+		Assert.assertTrue(binomio3.evaluarMSucesivas(1)!=0);
+		long tiempo3 = System.nanoTime() - start3;
+		System.out.println("[BinomioEvaluarMsucesivasGrado40: " + tiempo3 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start4 = System.nanoTime();
+		Assert.assertTrue(binomio4.evaluarMSucesivas(1)!=0);
+		long tiempo4 = System.nanoTime() - start4;
+		System.out.println("[BinomioEvaluarMsucesivasGrado50: " + tiempo4 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start5 = System.nanoTime();
+		Assert.assertTrue(binomio5.evaluarMSucesivas(1)!=0);
+		long tiempo5 = System.nanoTime() - start5;
+		System.out.println("[BinomioEvaluarMsucesivasGrado60: " + tiempo5 + " ns");
+		//////////////////////////////////////////////////////////////////
+		System.out.println("");
 	}
 	
 	@Test
-	public void queEvalueBienMSucesivasGrado20(){
-		long start = System.nanoTime();
-		
-		Assert.assertTrue(binomio1.evaluarMSucesivas(1)!=0);
-		
-		long tiempo = System.nanoTime() - start;
-		System.out.println("[BinomioEvaluarMsucesivasGrado20: " + tiempo + " ns");
-	}	
-
-	@Test
-	public void queEvalueBienMSucesivasGrado30(){
-		long start = System.nanoTime();
-		
-		Assert.assertTrue(binomio2.evaluarMSucesivas(1)!=0);
-		
-		long tiempo = System.nanoTime() - start;
-		System.out.println("[BinomioEvaluarMsucesivasGrado30: " + tiempo + " ns");
-		System.out.println("");
-	}	
-
-	@Test
-	public void queEvalueBienProgDinamicaGrado10(){
+	public void queEvalueBienProgDinamica(){
 		long start = System.nanoTime();
 		Assert.assertTrue(binomio.evaluarProgDinamica(1) !=0);		
 		long tiempo = System.nanoTime() - start;
 		System.out.println("[BinomioEvaluarProgDinamica10: " + tiempo + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start1 = System.nanoTime();
+		Assert.assertTrue(binomio1.evaluarProgDinamica(1) !=0);		
+		long tiempo1 = System.nanoTime() - start1;
+		System.out.println("[BinomioEvaluarProgDinamica20: " + tiempo1 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start2 = System.nanoTime();
+		Assert.assertTrue(binomio2.evaluarProgDinamica(1) !=0);		
+		long tiempo2 = System.nanoTime() - start2;
+		System.out.println("[BinomioEvaluarProgDinamica30: " + tiempo2 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start3 = System.nanoTime();
+		Assert.assertTrue(binomio3.evaluarProgDinamica(1) !=0);		
+		long tiempo3 = System.nanoTime() - start3;
+		System.out.println("[BinomioEvaluarProgDinamica40: " + tiempo3 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start4 = System.nanoTime();
+		Assert.assertTrue(binomio4.evaluarProgDinamica(1) !=0);		
+		long tiempo4 = System.nanoTime() - start4;
+		System.out.println("[BinomioEvaluarProgDinamica50: " + tiempo4 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start5 = System.nanoTime();
+		Assert.assertTrue(binomio5.evaluarProgDinamica(1) !=0);		
+		long tiempo5 = System.nanoTime() - start5;
+		System.out.println("[BinomioEvaluarProgDinamica60: " + tiempo5 + " ns");
+		//////////////////////////////////////////////////////////////////
+		System.out.println("");
 	}	
 
 	@Test
-	public void queEvalueBienProgDinamicaGrado20(){
+	public void queEvalueBienRecursivaPar(){
 		long start = System.nanoTime();
-		Assert.assertTrue(binomio1.evaluarProgDinamica(1) !=0);		
-		long tiempo = System.nanoTime() - start;
-		System.out.println("[BinomioEvaluarProgDinamica20: " + tiempo + " ns");
-	}
-	
-	@Test
-	public void queEvalueBienProgDinamicaGrado30(){
-		long start = System.nanoTime();
-		Assert.assertTrue(binomio2.evaluarProgDinamica(1) !=0);		
-		long tiempo = System.nanoTime() - start;
-		System.out.println("[BinomioEvaluarProgDinamica30: " + tiempo + " ns");
-		System.out.println("");
-	}
-	
-	@Test
-	public void queEvalueBienRecursivaParGrado10(){
-		long start = System.nanoTime();
-		
 		Assert.assertTrue(binomio.evaluarRecursivaPar(1)!=0);
-		
 		long tiempo = System.nanoTime() - start;
 		System.out.println("[BinomioEvaluarRecursivaPar10: " + tiempo + " ns");
-	}	
-	
-	@Test
-	public void queEvalueBienRecursivaParGrado20(){
-		long start = System.nanoTime();
-		
+		//////////////////////////////////////////////////////////////////
+		long start1 = System.nanoTime();
 		Assert.assertTrue(binomio1.evaluarRecursivaPar(1)!=0);
-		
-		long tiempo = System.nanoTime() - start;
-		System.out.println("[BinomioEvaluarRecursivaPar20: " + tiempo + " ns");
-	}	
-	
-	@Test
-	public void queEvalueBienRecursivaParGrado30(){
-		long start = System.nanoTime();
-		
+		long tiempo1 = System.nanoTime() - start1;
+		System.out.println("[BinomioEvaluarRecursivaPar20: " + tiempo1 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start2 = System.nanoTime();
 		Assert.assertTrue(binomio2.evaluarRecursivaPar(1)!=0);
-		
-		long tiempo = System.nanoTime() - start;
-		System.out.println("[BinomioEvaluarRecursivaPar30: " + tiempo + " ns");
+		long tiempo2 = System.nanoTime() - start2;
+		System.out.println("[BinomioEvaluarRecursivaPar30: " + tiempo2 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start3 = System.nanoTime();
+		Assert.assertTrue(binomio3.evaluarRecursivaPar(1)!=0);
+		long tiempo3 = System.nanoTime() - start3;
+		System.out.println("[BinomioEvaluarRecursivaPar40: " + tiempo3 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start4 = System.nanoTime();
+		Assert.assertTrue(binomio4.evaluarRecursivaPar(1)!=0);
+		long tiempo4 = System.nanoTime() - start4;
+		System.out.println("[BinomioEvaluarRecursivaPar50: " + tiempo4 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start5 = System.nanoTime();
+		Assert.assertTrue(binomio5.evaluarRecursivaPar(1)!=0);
+		long tiempo5 = System.nanoTime() - start5;
+		System.out.println("[BinomioEvaluarRecursivaPar60: " + tiempo5 + " ns");
+		//////////////////////////////////////////////////////////////////
 		System.out.println("");
 	}	
 	
 	@Test
-	public void queEvalueBienRecursivaGrado10(){
+	public void queEvalueBienRecursiva(){
 		long start = System.nanoTime();
-		
 		Assert.assertTrue(binomio.evaluarRecursiva(1)!=0);
-		
 		long tiempo = System.nanoTime() - start;
 		System.out.println("[BinomioEvaluarRecursiva10: " + tiempo + " ns");
-	}	
-	
-	@Test
-	public void queEvalueBienRecursivaGrado20(){
-		long start = System.nanoTime();
-		
-		Assert.assertTrue(binomio1.evaluarRecursiva(1)!=0);
-		
-		long tiempo = System.nanoTime() - start;
-		System.out.println("[BinomioEvaluarRecursiva20: " + tiempo + " ns");
-	}	
-	
-	@Test
-	public void queEvalueBienRecursivaGrado30(){
-		long start = System.nanoTime();
-		
+		//////////////////////////////////////////////////////////////////
+		long start1 = System.nanoTime();
+		Assert.assertTrue(binomio1.evaluarRecursiva(1)!=0);	
+		long tiempo1 = System.nanoTime() - start1;
+		System.out.println("[BinomioEvaluarRecursiva20: " + tiempo1 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start2 = System.nanoTime();
 		Assert.assertTrue(binomio2.evaluarRecursiva(1)!=0);
-		
-		long tiempo = System.nanoTime() - start;
-		System.out.println("[BinomioEvaluarRecursiva30: " + tiempo + " ns");
+		long tiempo2 = System.nanoTime() - start2;
+		System.out.println("[BinomioEvaluarRecursiva30: " + tiempo2 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start3 = System.nanoTime();
+		Assert.assertTrue(binomio3.evaluarRecursiva(1)!=0);
+		long tiempo3 = System.nanoTime() - start3;
+		System.out.println("[BinomioEvaluarRecursiva40: " + tiempo3 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start4 = System.nanoTime();
+		Assert.assertTrue(binomio4.evaluarRecursiva(1)!=0);
+		long tiempo4 = System.nanoTime() - start4;
+		System.out.println("[BinomioEvaluarRecursiva50: " + tiempo4 + " ns");
+		//////////////////////////////////////////////////////////////////
+		long start5 = System.nanoTime();
+		Assert.assertTrue(binomio5.evaluarRecursiva(1)!=0);
+		long tiempo5 = System.nanoTime() - start5;
+		System.out.println("[BinomioEvaluarRecursiva60: " + tiempo5 + " ns");
+		//////////////////////////////////////////////////////////////////
 		System.out.println("");
 	}	
+	
 }
