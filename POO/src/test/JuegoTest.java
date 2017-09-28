@@ -261,7 +261,28 @@ public class JuegoTest {
 		assertTrue(lancero1.getSalud() == 129.5);
 		assertTrue(caballero1.getSalud() == 179.5);
 		
+	}
+	
+	@Test
+	public void escudoTest(){
+		soldado1 = new Escudo(soldado1);
+		arquero1 = new Escudo(arquero1);
+		lancero1 = new Escudo(lancero1);
+		caballero1 = new Escudo(caballero1);
 		
+		soldado1.recibirAtaque(10);
+		arquero1.recibirAtaque(10);
+		lancero1.recibirAtaque(10);
+		caballero1.recibirAtaque(10);
+		
+		//Si funciona bien deberian recibir solo el 40% del ataque o sea 4 puntos de daño
+		
+		assertTrue(soldado1.getSalud() == 196);
+		assertTrue(arquero1.getSalud() == 46);
+		assertTrue(lancero1.getSalud() == 146);
+		assertTrue(caballero1.getSalud() == 196);
+		
+		//El escudo no decora ningun otro atributo asi que no harian falta mas tests
 		
 	}
 }
