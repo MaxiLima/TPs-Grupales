@@ -320,6 +320,41 @@ public class JuegoTest {
 	@Test
 	public void capaTest(){
 		
+		soldado1 = new Capa(soldado1);
+		arquero1 = new Capa(arquero1);
+		lancero1 = new Capa(lancero1);
+		caballero1 = new Capa(caballero1);
+		
+		//Testeo que tengan solo el 90% del daño
+		
+		assertTrue(soldado1.getPoder() == 9);
+		assertTrue(arquero1.getPoder() == 4.5);
+		assertTrue(lancero1.getPoder() == 22.5); 
+		assertTrue(caballero1.getPoder() == 45);
+		
+		//Testeo que la Unidad en verdad saque solo el 90% del daño
+		
+		soldado1.peleaCon(soldado2);
+		assertTrue(soldado2.getSalud() == 191);
+		
+		arquero1.moverHacia(0, 3);
+		arquero1.peleaCon(arquero2);
+		assertTrue(arquero2.getSalud() == 45.5);
+		
+		lancero1.moverHacia(0, 1);
+		lancero1.peleaCon(lancero2);
+		assertTrue(lancero2.getSalud() == 127.5);
+		
+		caballero1.moverHacia(0, 1);
+		caballero1.peleaCon(caballero2);
+		assertTrue(caballero2.getSalud() == 155);
+		
+		//Testeo que el soldado tenga el doble de su energia
+		
+		soldado1.tomarPocionAgua();
+		assertTrue(soldado1.getEnergia() == 200);
+		soldado1.atacar();
+		assertTrue(soldado1.getEnergia() == 190);
 	}
 	
 	
