@@ -34,6 +34,8 @@ public class Arquero extends Unidad{
 	@Override
 	public void recibirAtaque(double golpe) {
 		this.setSalud(this.getSalud() - golpe);
+		if(this.getSalud()<0)
+			this.salud = 0;
 	}
 	
 	@Override
@@ -50,8 +52,7 @@ public class Arquero extends Unidad{
 
 	@Override
 	public void tomarPocionAgua() {
-		// TODO Auto-generated method stub
-		
+		this.salud = 50;
 	}
 	
 	@Override

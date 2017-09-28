@@ -20,7 +20,8 @@ public class Lancero extends Unidad{
 	@Override
 	public void recibirAtaque(double golpe) {
 		this.setSalud(this.getSalud() - golpe);
-		
+		if(this.getSalud()<0)
+			this.salud = 0;
 	}
 	
 	@Override

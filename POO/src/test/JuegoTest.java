@@ -164,12 +164,12 @@ public class JuegoTest {
 		
 		//Test basicos
 		assertTrue(soldado1.distanciaConEnemigo(soldado2) == 0 );
-		for (int i = 1; i < 1000; i++) {
+		for (int i = 1; i < 100000; i++) {
 			soldado1.moverHacia(i, 0);
 			assertTrue(soldado1.distanciaConEnemigo(soldado2) == i );
 		}
 		
-		for (int i = 1; i < 1000; i++) {
+		for (int i = 1; i < 100000; i++) {
 			arquero1.moverHacia(0, i);
 			assertTrue(arquero1.distanciaConEnemigo(arquero2) == i );
 		}
@@ -262,6 +262,23 @@ public class JuegoTest {
 		assertTrue(arquero1.getSalud() == 29.5);
 		assertTrue(lancero1.getSalud() == 129.5);
 		assertTrue(caballero1.getSalud() == 179.5);
+		
+		soldado1.tomarPocionAgua();
+		arquero1.tomarPocionAgua();
+		lancero1.tomarPocionAgua();
+		caballero1.tomarPocionAgua();
+		
+		//Golpee mayor al necesario para matar
+		
+		soldado1.recibirAtaque(300);
+		arquero1.recibirAtaque(300);
+		lancero1.recibirAtaque(300);
+		caballero1.recibirAtaque(300);
+		
+		assertTrue(soldado1.getSalud() == 0);
+		assertTrue(arquero1.getSalud() == 0);
+		assertTrue(lancero1.getSalud() == 0);
+		assertTrue(caballero1.getSalud() == 0);
 		
 	}
 	

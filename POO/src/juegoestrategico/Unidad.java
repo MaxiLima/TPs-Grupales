@@ -111,8 +111,6 @@ public abstract class Unidad{
 			enemigo.recibirAtaque(this.getPoder());			
 		}
 		
-		
-		
 		if(enemigo.getSalud()<=0)
 			System.out.println(this.getName() + " mato a " + enemigo.getName());
 	}
