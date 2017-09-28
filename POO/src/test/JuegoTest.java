@@ -19,6 +19,7 @@ public class JuegoTest {
 	Unidad caballero1;
 	Unidad caballero2;
 	
+	
 	@Before
 	public void before(){
 		
@@ -42,16 +43,16 @@ public class JuegoTest {
 		assertTrue(soldado1.getPoder() == 9);
 		assertTrue(soldado1.getEnergia() == 200);
 		
-		soldado2 = new Escudo(soldado2);
+		soldado2 = new Puñal(soldado2);
 		
-		assertTrue(soldado2.getPoder() == 10);
+		assertTrue(soldado2.getPoder() == 13);
 		
 		soldado1.moverHacia(2, 1);
 		soldado2.moverHacia(2, 0);
 		
 		soldado1.peleaCon(soldado2);
 
-		assertTrue(soldado2.getSalud() == 196.4);
+		assertTrue(soldado2.getPoder() == 13);
 		assertTrue(soldado1.getEnergia() == 190);
 		
 		soldado1.tomarPocionAgua();
@@ -77,7 +78,7 @@ public class JuegoTest {
 		
 		assertTrue(arquero1.getPoder() == 5);
 		
-		arquero1 = new Punial(arquero1);
+		arquero1 = new Puñal(arquero1);
 		
 		arquero1.peleaCon(arquero2);
 		arquero2.peleaCon(arquero1);
@@ -106,7 +107,7 @@ public class JuegoTest {
 		caballero1.peleaCon(soldado1);
 		assertTrue(soldado1.getSalud() == 150);
 		
-		caballero1 = new Punial(caballero1);
+		caballero1 = new Puñal(caballero1);
 		caballero1.tomarPocionAgua();
 		
 		caballero1.peleaCon(soldado1);
@@ -151,7 +152,8 @@ public class JuegoTest {
 		soldado1 = new Capa(soldado1);
 		
 		System.out.println(soldado1.getEnergia()); 
-		soldado1.peleaCon(soldado2);				//CONCLUSION: El decorator solo sirve para "decorar" no cambia atributos
+		soldado1.peleaCon(soldado2);				
+		//CONCLUSION: El decorator solo sirve para "decorar" no cambia atributos
 
 	}
 
@@ -275,7 +277,7 @@ public class JuegoTest {
 		lancero1.recibirAtaque(10);
 		caballero1.recibirAtaque(10);
 		
-		//Si funciona bien deberian recibir solo el 40% del ataque o sea 4 puntos de da�o
+		//Si funciona bien deberian recibir solo el 40% del ataque o sea 4 puntos de daño
 		
 		assertTrue(soldado1.getSalud() == 196);
 		assertTrue(arquero1.getSalud() == 46);
@@ -285,6 +287,42 @@ public class JuegoTest {
 		//El escudo no decora ningun otro atributo asi que no harian falta mas tests
 		
 	}
+	
+	@Test
+	public void puñalTest(){
+		
+		soldado1 = new Puñal(soldado1);
+		arquero1 = new Puñal(arquero1);
+		lancero1 = new Puñal(lancero1);
+		caballero1 = new Puñal(caballero1);
+		
+		//Testeamos que el ataque sea el original mas 3
+		
+		assertTrue(soldado1.getPoder() == 13);
+		assertTrue(arquero1.getPoder() == 8);
+		assertTrue(lancero1.getPoder() == 28);
+		assertTrue(caballero1.getPoder() == 53);
+		
+		//Testeamos que, como la defensa baja tres puntos, que reciban +3 de daño
+		
+		soldado1.recibirAtaque(1);
+		arquero1.recibirAtaque(1);
+		lancero1.recibirAtaque(1);
+		caballero1.recibirAtaque(1);
+		
+		assertTrue(soldado1.getSalud() == 196);
+		assertTrue(arquero1.getSalud() == 46);
+		assertTrue(lancero1.getSalud() == 146);
+		assertTrue(caballero1.getSalud() == 196);
+		
+	}
+	
+	@Test
+	public void capaTest(){
+		
+	}
+	
+	
 }
 
 

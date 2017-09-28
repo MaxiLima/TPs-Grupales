@@ -2,9 +2,9 @@ package utilidades;
 
 import juegoestrategico.Unidad;
 
-public class Punial extends UnidadDecorator{
+public class Puñal extends UnidadDecorator{
 
-	public Punial(Unidad unidad) {
+	public Puñal(Unidad unidad) {
 		this.unidad = unidad;
 	}
 
