@@ -41,7 +41,7 @@ public class Lancero extends Unidad{
 
 	@Override
 	public void tomarPocionAgua() {
-		// TODO Auto-generated method stub
+		this.salud = 150;
 		
 	}
 }

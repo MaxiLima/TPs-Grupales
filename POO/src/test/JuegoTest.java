@@ -226,6 +226,44 @@ public class JuegoTest {
 		assertTrue(soldado1.puedeAtacar() && arquero1.puedeAtacar() && caballero1.puedeAtacar());
 	}
 	
+	@Test
+	public void recibirAtaqueTest(){
+		//Normal
+		soldado1.recibirAtaque(10);
+		arquero1.recibirAtaque(10);
+		lancero1.recibirAtaque(10);
+		caballero1.recibirAtaque(10);
+		
+		assertTrue(soldado1.getSalud() == 190);
+		assertTrue(arquero1.getSalud() == 40);
+		assertTrue(lancero1.getSalud() == 140);
+		assertTrue(caballero1.getSalud() == 190);
+		
+		//Lo mata
+		soldado2.recibirAtaque(200);
+		arquero2.recibirAtaque(50);
+		lancero2.recibirAtaque(150);
+		caballero2.recibirAtaque(200);
+		
+		assertTrue(soldado2.getSalud() == 0);
+		assertTrue(arquero2.getSalud() == 0);
+		assertTrue(lancero2.getSalud() == 0);
+		assertTrue(caballero2.getSalud() == 0);
+		
+		//Con double
+		soldado1.recibirAtaque(10.5);
+		arquero1.recibirAtaque(10.5);
+		lancero1.recibirAtaque(10.5);
+		caballero1.recibirAtaque(10.5);
+		
+		assertTrue(soldado1.getSalud() == 179.5);
+		assertTrue(arquero1.getSalud() == 29.5);
+		assertTrue(lancero1.getSalud() == 129.5);
+		assertTrue(caballero1.getSalud() == 179.5);
+		
+		
+		
+	}
 }
 
 
