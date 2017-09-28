@@ -32,6 +32,8 @@ public class JuegoTest {
 		caballero2 = new Caballero("Nico");
 	}
 	
+	//////////////////////   TESTS NORMALES    ////////////////////////////////
+	
 	@Test
 	public void soldadosTest() {
 		
@@ -55,10 +57,7 @@ public class JuegoTest {
 		soldado1.tomarPocionAgua();
 		
 		assertTrue(soldado1.getEnergia() == 200);
-		
-		
-		
-		
+			
 	}
 	
 	@Test
@@ -148,10 +147,47 @@ public class JuegoTest {
 		
 		soldado1 = new Capa(soldado1);
 		
-		System.out.println(soldado1.getEnergia()); //ERROR. Muestra que tiene 100 de energia pero en realidad tiene 0
+		System.out.println(soldado1.getEnergia()); 
 		soldado1.peleaCon(soldado2);				//CONCLUSION: El decorator solo sirve para "decorar" no cambia atributos
 
 	}
+	  
+	/////////////////////////    TESTS "EXHAUSTIVOS"    ///////////////////////////////////////////
+	
+	@Test
+	public void moverYDistanciaTest(){
+		
+		
+		//Test basicos
+		assertTrue(soldado1.distanciaConEnemigo(soldado2) == 0 );
+		for (int i = 1; i < 1000; i++) {
+			soldado1.moverHacia(i, 0);
+			assertTrue(soldado1.distanciaConEnemigo(soldado2) == i );
+		}
+		
+		for (int i = 1; i < 1000; i++) {
+			arquero1.moverHacia(0, i);
+			assertTrue(arquero1.distanciaConEnemigo(arquero2) == i );
+		}
+		
+		for (int i = 1; i < 1000; i++) {
+			arquero2.moverHacia(i, i);
+			soldado2.moverHacia(i, i);
+			assertTrue(arquero2.distanciaConEnemigo(soldado2) == 0 );
+		}
+		
+		//Se testea cuando estan en diagonal
+		caballero1.moverHacia(4, 9);
+		caballero2.moverHacia(2, 3);
+		assertTrue(caballero1.distanciaConEnemigo(caballero2) == Math.sqrt(40));
+		
+		//Se testea con numeros negativos
+		lancero1.moverHacia(-3, 7);
+		lancero2.moverHacia(2, -1);
+		assertTrue(lancero1.distanciaConEnemigo(lancero2) == Math.sqrt(89));
+		
+	}
+	
 }
 
 
