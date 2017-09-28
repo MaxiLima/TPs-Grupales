@@ -18,7 +18,7 @@ public class Arquero extends Unidad{
 		return flechas;
 	}
 
-	public void cargarFlechas(){
+	public void setFlechas(){
 		this.flechas += 6;
 	}
 
@@ -57,6 +57,11 @@ public class Arquero extends Unidad{
 	public void tomarPocionAgua() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public void cargarFlechas(){
+		this.setFlechas();
 	}
 	
 }

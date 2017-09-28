@@ -90,6 +90,7 @@ public abstract class Unidad{
 	public abstract boolean puedeAtacar();
 	public abstract void recibirAtaque(double golpe);
 	public abstract void tomarPocionAgua();
+	public void cargarFlechas(){};
 	
 	//Template de la pelea con otra unidad
 	

@@ -131,6 +131,9 @@ public class JuegoTest {
 		assertTrue(lancero2.getSalud() == 140);
 	}
 	
+	  
+	/////////////////////////    TESTS "EXHAUSTIVOS"    ///////////////////////////////////////////
+	
 	@Test
 	public void EnergiaTest(){
 		
@@ -151,8 +154,7 @@ public class JuegoTest {
 		soldado1.peleaCon(soldado2);				//CONCLUSION: El decorator solo sirve para "decorar" no cambia atributos
 
 	}
-	  
-	/////////////////////////    TESTS "EXHAUSTIVOS"    ///////////////////////////////////////////
+
 	
 	@Test
 	public void moverYDistanciaTest(){
@@ -186,6 +188,42 @@ public class JuegoTest {
 		lancero2.moverHacia(2, -1);
 		assertTrue(lancero1.distanciaConEnemigo(lancero2) == Math.sqrt(89));
 		
+	}
+	
+	@Test
+	public void puedeAtacarTest(){
+		
+		assertTrue(soldado1.puedeAtacar() && arquero1.puedeAtacar() && lancero1.puedeAtacar() && caballero1.puedeAtacar());
+		
+		arquero1.moverHacia(0, 3);
+		for (int i = 0; i < 20; i++) {
+			arquero1.peleaCon(caballero1);
+		}
+		assertFalse(arquero1.puedeAtacar());
+		
+		for (int i = 0; i < 10; i++) {
+			soldado1.peleaCon(soldado2);
+		}
+		
+		assertFalse(soldado1.puedeAtacar());
+		
+		caballero1.moverHacia(0, 1);
+		caballero2.tomarPocionAgua();
+		for (int i = 0; i < 3; i++) {
+			caballero1.peleaCon(caballero2);
+		}
+		
+		assertFalse(caballero1.puedeAtacar());
+		
+		//Lancero no tiene condiciones para atacar
+		
+		//Recupero lo necesario en todos para ver si pueden volver a atacar
+		
+		caballero1.tomarPocionAgua();
+		soldado1.tomarPocionAgua();
+		arquero1.cargarFlechas();
+		
+		assertTrue(soldado1.puedeAtacar() && arquero1.puedeAtacar() && caballero1.puedeAtacar());
 	}
 	
 }
