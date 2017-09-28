@@ -3,11 +3,7 @@ package juegoestrategico;
 public class Lancero extends Unidad{
 	
 	public Lancero(String name){
-		this.name = name;
-		this.poder = 25;
-		this.salud = 150;
-		this.distanciaMin = 1;
-		this.distanciaMax = 3;
+		super(name, 25, 150, 0, 1, 3);
 	}
 
 	@Override

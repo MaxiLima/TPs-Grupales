@@ -4,12 +4,8 @@ public class Soldado extends Unidad{
 
 	
 	public Soldado(String name) {
-		this.name = name;
-		this.poder = 10;
-		this.salud = 200;
-		this.energia = 100;
-		this.distanciaMin = 0;
-		this.distanciaMax = 1;
+		super(name, 10, 200,100,0,1);
+		
 	}
 	
 

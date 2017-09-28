@@ -357,7 +357,6 @@ public class JuegoTest {
 		assertTrue(soldado1.getEnergia() == 190);
 	}
 	
-	
 }
 
 

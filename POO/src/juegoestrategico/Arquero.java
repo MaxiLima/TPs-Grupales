@@ -5,12 +5,7 @@ public class Arquero extends Unidad{
 	private int flechas;
 	
 	public Arquero(String name){
-		
-		this.name = name;
-		this.poder = 5;
-		this.salud = 50;
-		this.distanciaMin = 2;
-		this.distanciaMax = 5;
+		super(name, 5,50,0,2,5);
 		this.flechas = 20;
 	}
 	

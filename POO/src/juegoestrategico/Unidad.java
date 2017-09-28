@@ -79,10 +79,18 @@ public abstract class Unidad{
 	public void setDistanciaMax(int distanciaMax) {
 		this.distanciaMax = distanciaMax;
 	}
-
 	
+	public Unidad(){};
 	
-
+	public Unidad(String name, double poder, double salud, int energia, int distmin, int distmax){
+		
+		this.name = name;
+		this.poder = poder;
+		this.salud = salud;
+		this.energia = energia;
+		this.distanciaMin = distmin;
+		this.distanciaMax = distmax;
+	}
 	
 	public abstract double distanciaConEnemigo(Unidad that);
 	public abstract void moverHacia(int x, int y);
