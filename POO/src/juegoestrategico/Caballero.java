@@ -34,9 +34,12 @@ public class Caballero extends Unidad{
 
 	@Override
 	public boolean puedeAtacar() {
-		if(!caballoRebelde)
+		if(!caballoRebelde && this.getSalud()>0)
 			return true;
-		System.out.println(this.getName() + " no puede atacar!");
+		if(this.getSalud()<=0)
+			System.out.println(this.getName() + " esta muerto!");
+		if(caballoRebelde)
+			System.out.println(this.getName() + " no puede atacar!");
 		return false;
 	}
 
