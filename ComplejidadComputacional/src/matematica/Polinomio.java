@@ -1,11 +1,40 @@
 package matematica;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Polinomio {
 	
 	
 	private int grado;
 	private double[] coeficientes;
+	
+	public Polinomio(String path, String file){
+		Scanner entrada = null;
+		
+		try {
+			entrada=new Scanner(new File( path + file ));
+			
+			int grado = entrada.nextInt();
+			coeficientes = new double[grado +1];
+			
+			for(int i=0;i<=grado;i++){
+				coeficientes[i]=entrada.nextDouble();
+			}
+			
+			//set valores
+			this.grado=grado;
+			this.coeficientes=coeficientes;
+			
+			entrada.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally{
+			entrada.close();
+		}
+		
+	}
 	
 	public Polinomio(int grado){
 		
