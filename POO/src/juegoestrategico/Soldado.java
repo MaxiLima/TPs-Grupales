@@ -3,7 +3,7 @@ package juegoestrategico;
 public class Soldado extends Unidad{
 
 	
-	public Soldado(String name) {
+	public Soldado(String name) {//O(1)
 		super(name, 10, 200,100,0,1);
 		
 	}
@@ -11,12 +11,13 @@ public class Soldado extends Unidad{
 
 
 	@Override
-	public void atacar() {
+	public void atacar() {//O(1)
 		this.energia -= 10;
 	}
 
 	@Override
-	public boolean puedeAtacar() {
+
+	public boolean puedeAtacar() {//O(1)
 		if(this.getEnergia()>=10 && this.getSalud()>0)
 			return true;
 		if(this.getSalud()<=0)
@@ -27,20 +28,20 @@ public class Soldado extends Unidad{
 	}
 
 	@Override
-	public void recibirAtaque(double golpe) {
+	public void recibirAtaque(double golpe) {//O(1)
 		this.setSalud(this.getSalud() - golpe);
 		if(this.getSalud()<0)
 			this.salud = 0;
 	}
 	
 	@Override
-    public double distanciaConEnemigo(Unidad that){
+    public double distanciaConEnemigo(Unidad that){//O(NlogN)
 		
 		return Math.sqrt(Math.pow(this.getPosX() - that.getPosX(), 2) + Math.pow(this.getPosY() - that.getPosY(), 2));
 	}
 	
 	@Override
-	public void moverHacia(int x, int y){
+	public void moverHacia(int x, int y){//O(1)
 		this.posX = x;
 		this.posY = y;
 	}
@@ -48,7 +49,7 @@ public class Soldado extends Unidad{
 
 
 	@Override
-	public void tomarPocionAgua() {
+	public void tomarPocionAgua() {//O(1)
 		this.energia = 100;
 	}
 	
