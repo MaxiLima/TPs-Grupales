@@ -15,7 +15,7 @@ public abstract class UnidadDecorator extends Unidad{
 	}
 	
 	@Override
-	public double distanciaConEnemigo(Unidad that) {//O(1)
+	public double distanciaConEnemigo(Unidad that) {//O(NlogN)
 		return this.unidad.distanciaConEnemigo(that);
 	}
 

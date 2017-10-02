@@ -31,7 +31,7 @@ public class Soldado extends Unidad{
 	}
 	
 	@Override
-    public double distanciaConEnemigo(Unidad that){//O(N)
+    public double distanciaConEnemigo(Unidad that){//O(NlogN)
 		
 		return Math.sqrt(Math.pow(this.getPosX() - that.getPosX(), 2) + Math.pow(this.getPosY() - that.getPosY(), 2));
 	}

@@ -102,7 +102,7 @@ public abstract class Unidad{
 	
 	//Template de la pelea con otra unidad
 	
-	public void peleaCon(Unidad enemigo){//O(1)
+	public void peleaCon(Unidad enemigo){//O(NlogN)
 		
 		if((this.distanciaConEnemigo(enemigo)>=this.getDistanciaMin()
 			&& this.distanciaConEnemigo(enemigo)<=this.getDistanciaMax()) && this.puedeAtacar()) {
