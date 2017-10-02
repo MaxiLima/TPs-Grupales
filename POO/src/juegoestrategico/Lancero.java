@@ -12,9 +12,12 @@ public class Lancero extends Unidad{
 	}
 
 	@Override
+
 	public boolean puedeAtacar() {//O(1)
-		
-		return true;
+		if(this.getSalud()>0)
+			return true;
+		return false;
+
 	}
 
 	@Override

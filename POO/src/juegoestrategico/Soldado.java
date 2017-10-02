@@ -16,10 +16,14 @@ public class Soldado extends Unidad{
 	}
 
 	@Override
+
 	public boolean puedeAtacar() {//O(1)
-		if(this.getEnergia()>=10)
+		if(this.getEnergia()>=10 && this.getSalud()>0)
 			return true;
-		System.out.println(this.getName() + " no puede atacar!");
+		if(this.getSalud()<=0)
+			System.out.println(this.getName() + " esta muerto!");
+		if(this.getEnergia()<=0)
+			System.out.println(this.getName() + " no puede atacar!");
 		return false;
 	}
 
