@@ -456,6 +456,29 @@ public class JuegoTest {
 	}
 	
 	// xxx
+	
+	@Test
+	public void soldadoConCapaAtacaNVeces(){
+		
+		soldado1.moverHacia(0, 0);
+		soldado2.moverHacia(0, 0);
+		
+		assertTrue(soldado2.getSalud() == 200);
+		assertTrue(soldado1.getEnergia() == 100);
+		
+		soldado1 = new Capa(soldado1);
+		
+		assertTrue(soldado1.getEnergia() == 200); //duplica energia  [capa]
+		assertTrue(soldado1.getPoder() == 9);     //reduce poder 10% [capa]
+		
+		for(int i=0;i<20;i++){
+			soldado1.peleaCon(soldado2);
+		}
+		
+		assertTrue(soldado2.getSalud() == 20); // 9x20=180 -> 200 - 180 = 20 {ataque de soldado1}
+		
+	}
+	
 }
 
 
