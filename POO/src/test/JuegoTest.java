@@ -374,6 +374,88 @@ public class JuegoTest {
 		assertTrue(soldado1.getEnergia() == 190);
 	}
 	
+	// xxx- test_items_combinados_soldado
+	
+	@Test
+	public void soldadoEscudoYCapaPeleaConSoldado(){
+		
+		soldado1.moverHacia(0, 0);
+		soldado2.moverHacia(0, 0);
+		
+		assertTrue(soldado1.getSalud() ==200);
+		assertTrue(soldado1.getEnergia() ==100);
+		
+		soldado1 = new Escudo(soldado1);
+		soldado1 = new Capa(soldado1);
+		
+		assertTrue(soldado1.getEnergia() ==200); //duplica energia  [capa]
+		assertTrue(soldado1.getPoder() == 9);    //reduce poder 10% [capa]
+		
+		soldado2.peleaCon(soldado1);
+		
+		assertTrue(soldado1.getSalud() == 196); //reduce ataque al 40% [escudo]
+		
+	}
+	
+	@Test
+	public void soldadoEscudoYPunialPeleaConSoldado(){
+		
+		soldado1.moverHacia(0, 0);
+		soldado2.moverHacia(0, 0);
+		
+		assertTrue(soldado1.getSalud() ==200);
+		assertTrue(soldado1.getEnergia() ==100);
+		
+		soldado1 = new Escudo(soldado1);
+		soldado1 = new Puñal(soldado1);
+		
+		assertTrue(soldado1.getPoder() == 13); //aumenta poder +3 [punial]
+		
+		soldado2.peleaCon(soldado1);
+		
+		assertTrue(soldado1.getSalud() == 194.8); //reduce ataque al 40% (40% x 13 = 5.2)[escudo]
+		
+		//ahora soldado1 ataca a soldado2
+		
+		assertTrue(soldado2.getSalud() == 200);
+		
+		soldado1.peleaCon(soldado2);
+		
+		assertTrue(soldado2.getSalud() == 187);
+	}
+	
+	@Test
+	public void soldadoCapaYPunialPeleaConSoldado(){
+		
+		soldado1.moverHacia(0, 0);
+		soldado2.moverHacia(0, 0);
+		
+		assertTrue(soldado2.getSalud() == 200);
+		
+		assertTrue(soldado1.getEnergia() == 100);
+		assertTrue(soldado1.getPoder() == 10);
+		
+		soldado1 = new Capa(soldado1);    //primero capa [poder -10% -> 9]
+		soldado1 = new Puñal(soldado1);   //despues puñal[poder +3 -> 9 + 3 -> 12]
+		
+		assertTrue(soldado1.getEnergia() == 200); //duplica energia [capa]
+		assertTrue(soldado1.getPoder() == 12);
+		
+		soldado1.peleaCon(soldado2);
+		
+		assertTrue(soldado2.getSalud() == 188);
+		
+		//ahora soldado2 ataca a soldado1
+		
+		assertTrue(soldado1.getSalud() == 200);
+		
+		soldado2.peleaCon(soldado1);
+		
+		assertTrue(soldado1.getSalud() == 187); //puñal reduce defensa en 3
+		
+	}
+	
+	// xxx
 }
 
 
